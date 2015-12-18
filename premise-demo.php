@@ -33,9 +33,9 @@ if ( is_admin() ) {
 class Premise_Demo {
 
     /**
-     * Display cntent before fields
+     * Display content before fields
      * 
-     * @return [type] [description]
+     * @return string echo html
      */
     public function bef_fields() {
 
