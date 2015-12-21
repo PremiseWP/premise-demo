@@ -2,7 +2,7 @@
 /*
 Plugin Name: Premise Demo
 Plugin URI:  http://premise.dev
-Description: Plugin used to test and demo Premise WP
+Description: Use this plugin as a start for your new project or simply an easy way to try out Premise WP
 Version:     1.0.0
 Author:      Mario Vallejo
 Author URI:  http://premisewp.com
@@ -13,12 +13,16 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
 
+// Block direct access to this file.
+defined( 'ABSPATH' ) or die();
+
+
+
+
 /**
  * Start our plugin
  */
-if ( is_admin() ) {
-    new Premise_Demo();
-}
+add_action( 'plugins_loaded', array( Premise_Demo::get_instance(), 'init' ) );
 
 
 
@@ -33,82 +37,55 @@ if ( is_admin() ) {
 class Premise_Demo {
 
     /**
-     * Display content before fields
-     * 
-     * @return string echo html
+     * Plugin instance.
+     *
+     * @see get_instance()
+     *
+     * @var object
      */
-    public function bef_fields() {
+    protected static $instance = null;
 
-        // Write any code here to display before the fields.
-        // This is very helpful if you just want to create your own
-        // page, or just play with some code before adding to your
-        // plugin. 
-        // Also helpful to dump data and test it's being saved properly.
 
+
+
+    /**
+     * Access this plugin’s working instance
+     *
+     * @return  object instance of this class
+     */
+    public static function get_instance() {
+        null === self::$instance and self::$instance = new self;
+
+        return self::$instance;
     }
 
 
 
 
     /**
-     * Holds the title for this page
-     *
-     * Change this to change the page title.
-     * use an array to have more control.
-     * array(
-     *     'post_type_name' => 'car_cpt',
-     *     'singular' => 'Car',
-     *     'plural' => 'Cars',
-     *     'slug' => 'car-cpt',
-     * )
-     * 
-     * @var array
+     * Intentionally left empty
      */
-    public $title = 'Premise Demo';
+    function __construct() {}
 
 
 
 
     /**
-     * Holds the fields to display on page
-     *
-     * Change these fields to display something else.
-     * Display a hidden field if you want nothing to show
-     * 
-     * @var array
-     */
-    public $fields = array(
-        array() // Every field goes int their own array
-    );
-
-
-
-
-
-    /**
-     * registers hooks and filters needed for our plugin to run
-     */
-    function __construct() {
-
-        add_filter( 'premise_options_before_fields', array( $this, 'bef_fields' ) );
-
-        add_action( 'init', array( $this, 'init' ) );
-    }
-
-
-
-
-    /**
-     * Instantiates Premise_Options class
-     *
-     * This builds our page in the backend
-     *
-     * @see https://github.com/PremiseWP/Premise-WP#create-an-option-page-in-one-function for more information about Premise_Options class
+     * Require premise and begin your code
      */
     public function init() {
-        new Premise_Options( $this->title, $this->fields );
+
+        $this->require_premise_wp();
+
+        # your code here..
     }
 
+
+
+
+    public function require_premise_wp() {
+        include 'includes/require-premise-wp.php';
+    }
 
 }
 
