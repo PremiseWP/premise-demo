@@ -1,4 +1,4 @@
-<?php
+ <?php
 /*
 Plugin Name: Premise Demo
 Plugin URI:  http://premise.dev
@@ -15,6 +15,13 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 // Block direct access to this file.
 defined( 'ABSPATH' ) or die();
+
+
+
+/**
+ * require Premise WP
+ */
+include 'includes/require-premise-wp.php';
 
 
 
@@ -71,21 +78,54 @@ class Premise_Demo {
 
 
     /**
-     * Require premise and begin your code
+     * Hook our page to be created on init
      */
     public function init() {
 
-        $this->require_premise_wp();
+        add_action( 'init', array( $this, 'new_page' ) );
+    }
 
-        # your code here..
+
+
+    /**
+     * Registsters the new page in the admin side for Premise Demo
+     * if the Premise_Options class is available.
+     */
+    public function new_page() {
+        if ( class_exists( 'Premise_options' ) ) {
+            $demo_options = array(
+                'title' => 'Premise Options Page',
+                'menu_title' => 'Premise Options',
+                'capability' => 'manage_options',
+                'menu_slug' => 'premise_options_page',
+                'call_back' => array( $this, 'display_code' ),
+                'icon' => '',
+                'position' => '59.2',
+            );
+            new Premise_options( $demo_options );
+        }
     }
 
 
 
 
-    public function require_premise_wp() {
-        include 'includes/require-premise-wp.php';
+    /**
+     * Display the code
+     *
+     * This function is supposed to run the code you are testing.
+     * Place your code in here, your code should echo content or print something.
+     * 
+     * @return string is supposed to echo the html content for the demo page
+     */
+    public function display_code() {
+        
+        # Your code goes here..
+
     }
+
+
+
+
 
 }
 
