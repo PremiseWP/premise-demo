@@ -118,9 +118,11 @@ class Premise_Demo {
      * @return string is supposed to echo the html content for the demo page
      */
     public function display_code() {
+        echo '<div class="wrap">';
         
-        # Your code goes here..
+            # Enter your code here..
 
+        echo '</div>';
     }
 
 
