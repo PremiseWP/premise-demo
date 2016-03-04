@@ -116,6 +116,12 @@ class Premise_Demo {
 	public function display_code() {
 		echo '<div class="wrap">';
 
+			require 'includes/test/premise-test.php';
+
+			// Premise_test::fields();
+			// Premise_test::fields_hooks();
+			// Premise_test::fields_demo();
+
 			// Enter your code here..
 
 		echo '</div>';
