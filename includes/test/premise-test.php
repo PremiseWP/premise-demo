@@ -251,7 +251,7 @@ class Premise_Test {
 			array(
 				'name' => 'input16',
 				'label' => 'Text input with onclick',
-				'onclick' => 'alert(\'Dont you click me!\');',
+				'onclick' => 'alert(\'Don\'t you click me!\');',
 			)
 		);
 		echo PHP_EOL;
