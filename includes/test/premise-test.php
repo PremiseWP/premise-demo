@@ -747,7 +747,7 @@ class Premise_Test {
 			'text',
 			array(
 				'name' => 'input1',
-				'label' => 'Text input',
+				'label' => 'Text input <span class="increment">1</span>',
 				'wrapper_class' => 'premise-field-duplicate-text',
 			)
 		);
@@ -757,9 +757,21 @@ class Premise_Test {
 		premise_field( 'select',
 			array(
 				'name' => 'input3',
-				'label' => 'Select input',
+				'label' => 'Select input <span class="increment">2</span>',
 				'options' => array( 'Option 1' => 'option1', 'Option 2' => 'option2' ),
 				'wrapper_class' => 'premise-field-duplicate-select',
+			)
+		);
+		echo PHP_EOL;
+
+		// 2b. Selected input.
+		premise_field( 'select',
+			array(
+				'value' => 'option2',
+				'name' => 'inputb3',
+				'label' => 'Selected input <span class="increment">3</span>',
+				'options' => array( 'Option 1' => 'option1', 'Option 2' => 'option2' ),
+				'wrapper_class' => 'premise-field-duplicate-selected',
 			)
 		);
 		echo PHP_EOL;
@@ -768,7 +780,7 @@ class Premise_Test {
 		premise_field( 'select',
 			array(
 				'name' => 'input4',
-				'label' => 'Multiple select input',
+				'label' => 'Multiple select input <span class="increment">4</span>',
 				'multiple' => 'multiple',
 				'options' => array( 'Option 1' => 'option1', 'Option 2' => 'option2' ),
 				'wrapper_class' => 'premise-field-duplicate-select-multiple',
@@ -777,7 +789,7 @@ class Premise_Test {
 		echo PHP_EOL;
 
 		// 4. Radio input.
-		echo '<div class="premise-field-duplicate-radio">';
+		echo '<div class="premise-field-duplicate-radio"> <span class="increment">5</span>';
 		premise_field( 'radio',
 			array(
 				'value'  => 'a',
@@ -817,7 +829,7 @@ class Premise_Test {
 			array(
 				'value'  => 'a',
 				'name' => 'input6a',
-				'label' => 'Checkbox input (should be unchecked)',
+				'label' => 'Checkbox input (should be unchecked) <span class="increment">6</span>',
 				'value_att'  => 'b',
 				'wrapper_class' => 'premise-field-duplicate-checkbox',
 			)
@@ -828,7 +840,7 @@ class Premise_Test {
 			array(
 				'value'  => 'b',
 				'name' => 'input6b',
-				'label' => 'Checkbox input (should be checked)',
+				'label' => 'Checkbox input (should be checked) <span class="increment">7</span>',
 				'value_att'  => 'b',
 				'wrapper_class' => 'premise-field-duplicate-checkbox',
 			)
@@ -840,6 +852,7 @@ class Premise_Test {
 
 			jQuery('.premise-field-duplicate-checkbox').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-select').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-selected').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-radio').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-select-multiple').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-text').premiseFieldDuplicate();
