@@ -680,4 +680,47 @@ class Premise_Test {
 		<?php
 	}
 
+
+
+	/**
+	 * Videos embed tests
+	 *
+	 * @see premise_output_video()
+	 */
+	public static function videos_embed() {
+
+		?>
+		<h2>Premise WP framework</h2>
+		<h3>Videos embed</h3><br />
+		<?php
+		// 1. Youtube URL.
+		echo '<h4>Youtube URL: https://youtu.be/Vl9T4KjS15s</h4>';
+		echo premise_output_video( 'https://youtu.be/Vl9T4KjS15s' );
+		echo PHP_EOL;
+
+		// 2. Youtube ID.
+		echo '<h4>Youtube ID: tTik3qfotQw</h4>';
+		echo premise_output_video( 'tTik3qfotQw' );
+		echo PHP_EOL;
+
+		// 3. Vimeo URL.
+		echo '<h4>Vimeo URL: http://vimeo.com/155365911</h4>';
+		echo premise_output_video( 'http://vimeo.com/155365911' );
+		echo PHP_EOL;
+
+		// 4. Vimeo ID.
+		echo '<h4>Vimeo ID: 180209925</h4>';
+		echo premise_output_video( '180209925' );
+		echo PHP_EOL;
+
+		// 5. Wistia URL.
+		echo '<h4>Wistia URL: //fast.wistia.net/embed/iframe/avk9twrrbn</h4>';
+		echo premise_output_video( '//fast.wistia.net/embed/iframe/avk9twrrbn' );
+		echo PHP_EOL;
+
+		// 6. Wistia ID.
+		echo '<h4>Wistia ID: j38ihh83m5</h4>';
+		echo premise_output_video( 'j38ihh83m5' );
+		echo PHP_EOL;
+	}
 }

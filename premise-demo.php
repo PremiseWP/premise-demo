@@ -94,7 +94,7 @@ class Premise_Demo {
 				'menu_title' => 'Premise Options',
 				'capability' => 'manage_options',
 				'menu_slug' => 'premise_options_page',
-				'call_back' => array( $this, 'display_code' ),
+				'callback' => array( $this, 'display_code' ),
 				'icon' => '',
 				'position' => '59.2',
 			);
@@ -121,6 +121,7 @@ class Premise_Demo {
 			// Premise_test::fields();
 			// Premise_test::fields_hooks();
 			// Premise_test::fields_demo();
+			Premise_test::videos_embed();
 
 			// Enter your code here..
 
