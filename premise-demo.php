@@ -121,7 +121,8 @@ class Premise_Demo {
 			// Premise_test::fields();
 			// Premise_test::fields_hooks();
 			// Premise_test::fields_demo();
-			Premise_test::videos_embed();
+			// Premise_test::videos_embed();
+			Premise_test::fields_duplicate();
 
 			// Enter your code here..
 

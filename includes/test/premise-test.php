@@ -723,4 +723,127 @@ class Premise_Test {
 		echo premise_output_video( 'j38ihh83m5' );
 		echo PHP_EOL;
 	}
+
+
+
+	/**
+	 * Fields duplicate tests
+	 *
+	 * @see premiseFieldDuplicate jQuery plugin.
+	 *
+	 * `$('.my-fields').premiseFieldDuplicate()`
+	 *
+	 * @return string Fields to duplicate.
+	 */
+	public static function fields_duplicate() {
+
+		?>
+		<h2>Premise WP framework</h2>
+		<h3>Fields demo</h3><br />
+		<div class="premise-row">
+		<?php
+		// 1. Text input.
+		premise_field(
+			'text',
+			array(
+				'name' => 'input1',
+				'label' => 'Text input',
+				'wrapper_class' => 'premise-field-duplicate-text',
+			)
+		);
+		echo PHP_EOL;
+
+		// 2. Select input.
+		premise_field( 'select',
+			array(
+				'name' => 'input3',
+				'label' => 'Select input',
+				'options' => array( 'Option 1' => 'option1', 'Option 2' => 'option2' ),
+				'wrapper_class' => 'premise-field-duplicate-select',
+			)
+		);
+		echo PHP_EOL;
+
+		// 3. Multiple select input.
+		premise_field( 'select',
+			array(
+				'name' => 'input4',
+				'label' => 'Multiple select input',
+				'multiple' => 'multiple',
+				'options' => array( 'Option 1' => 'option1', 'Option 2' => 'option2' ),
+				'wrapper_class' => 'premise-field-duplicate-select-multiple',
+			)
+		);
+		echo PHP_EOL;
+
+		// 4. Radio input.
+		echo '<div class="premise-field-duplicate-radio">';
+		premise_field( 'radio',
+			array(
+				'value'  => 'a',
+				'name' => 'input5',
+				'id' => 'input5a',
+				'label' => 'Radio input a',
+				'value_att'  => 'c',
+			)
+		);
+		echo PHP_EOL;
+
+		premise_field( 'radio',
+			array(
+				'value'  => 'b',
+				'name' => 'input5',
+				'id' => 'input5b',
+				'label' => 'Radio input b',
+				'value_att'  => 'c',
+			)
+		);
+		echo PHP_EOL;
+
+		premise_field( 'radio',
+			array(
+				'value'  => 'c',
+				'name' => 'input5',
+				'id' => 'input5c',
+				'label' => 'Radio input c (should be selected)',
+				'value_att'  => 'c',
+			)
+		);
+		echo PHP_EOL;
+		echo '</div>';
+
+		// 5. Checkbox input.
+		premise_field( 'checkbox',
+			array(
+				'value'  => 'a',
+				'name' => 'input6a',
+				'label' => 'Checkbox input (should be unchecked)',
+				'value_att'  => 'b',
+				'wrapper_class' => 'premise-field-duplicate-checkbox',
+			)
+		);
+		echo PHP_EOL;
+
+		premise_field( 'checkbox',
+			array(
+				'value'  => 'b',
+				'name' => 'input6b',
+				'label' => 'Checkbox input (should be checked)',
+				'value_att'  => 'b',
+				'wrapper_class' => 'premise-field-duplicate-checkbox',
+			)
+		);
+		echo PHP_EOL;
+		?>
+		</div>
+		<script>
+
+			jQuery('.premise-field-duplicate-checkbox').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-select').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-radio').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-select-multiple').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-text').premiseFieldDuplicate();
+		</script>
+		<?php
+	}
 }
