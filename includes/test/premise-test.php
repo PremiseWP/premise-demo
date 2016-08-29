@@ -831,7 +831,7 @@ class Premise_Test {
 				'name' => 'input6a',
 				'label' => 'Checkbox input (should be unchecked) <span class="increment">6</span>',
 				'value_att'  => 'b',
-				'wrapper_class' => 'premise-field-duplicate-checkbox',
+				'wrapper_class' => 'premise-field-duplicate-checkbox1',
 			)
 		);
 		echo PHP_EOL;
@@ -842,7 +842,7 @@ class Premise_Test {
 				'name' => 'input6b',
 				'label' => 'Checkbox input (should be checked) <span class="increment">7</span>',
 				'value_att'  => 'b',
-				'wrapper_class' => 'premise-field-duplicate-checkbox',
+				'wrapper_class' => 'premise-field-duplicate-checkbox2',
 			)
 		);
 		echo PHP_EOL;
@@ -850,7 +850,8 @@ class Premise_Test {
 		</div>
 		<script>
 
-			jQuery('.premise-field-duplicate-checkbox').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-checkbox1').premiseFieldDuplicate();
+			jQuery('.premise-field-duplicate-checkbox2').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-select').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-selected').premiseFieldDuplicate();
 			jQuery('.premise-field-duplicate-radio').premiseFieldDuplicate();
