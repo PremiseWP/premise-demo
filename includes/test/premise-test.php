@@ -860,4 +860,58 @@ class Premise_Test {
 		</script>
 		<?php
 	}
+
+
+
+	/**
+	 * Google Map tests
+	 *
+	 * @see premiseGoogleMap jQuery plugin.
+	 *
+	 * `$('.my-google-map').premiseGoogleMap()`
+	 */
+	public static function google_map() {
+
+		?>
+		<h2>Premise WP framework</h2>
+		<h3>Google maps demo</h3><br />
+		<div class="premise-row">
+			<h4>Google Map, default height</h4>
+			<div class="premise-google-map1"></div>
+
+			<h4>Google Map without Marker, 500px height</h4>
+			<div class="premise-google-map2"></div>
+
+			<h4>Google Map, 16/9 ratio, zoom 5</h4>
+			<div class="premise-aspect-ratio-16-9">
+				<div class="premise-google-map3"></div>
+			</div>
+		</div>
+		<script>
+			// Declare it globally as a default
+			jQuery.fn.premiseGoogleMap.defaults.key = 'AIzaSyDjSZeUoV_w8cnRYis_r5bAnTO2OvSJ-os';
+
+			jQuery('.premise-google-map1').premiseGoogleMap({
+				center: '1 avenue des Champs Elysées, Paris, France'
+			});
+
+			// Change the default 300px to 500px.
+			jQuery.fn.premiseGoogleMap.defaults.minHeight = 500;
+
+			jQuery('.premise-google-map2').premiseGoogleMap({
+				center: 'Plaza de Bolivar, Bogotá, Colombia',
+				marker: false
+			});
+
+			// Get rid of the min height param. we wont need it.
+			jQuery.fn.premiseGoogleMap.defaults.minHeight = '';
+
+			jQuery('.premise-google-map3').premiseGoogleMap({
+				center: 'Chicago IL',
+				zoom: 5
+			});
+
+		</script>
+		<?php
+	}
 }

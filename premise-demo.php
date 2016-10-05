@@ -122,7 +122,8 @@ class Premise_Demo {
 			// Premise_test::fields_hooks();
 			// Premise_test::fields_demo();
 			// Premise_test::videos_embed();
-			Premise_test::fields_duplicate();
+			// Premise_test::fields_duplicate();
+			Premise_test::google_map();
 
 			// Enter your code here..
 
