@@ -889,22 +889,25 @@ class Premise_Test {
 		</div>
 		<script>
 			// Declare it globally as a default
-			jQuery.fn.premiseGoogleMap.defaults.key = 'AIzaSyDjSZeUoV_w8cnRYis_r5bAnTO2OvSJ-os';
+			jQuery.fn.premiseGoogleMap.defaults.key = 'AIzaSyBQ0ynXGK6HNdknMFc_RzZjs7GuGidhPow';
 
 			jQuery('.premise-google-map1').premiseGoogleMap({
-				center: '1 avenue des Champs Elysées, Paris, France'
+				center: '1 avenue des Champs Elysées, Paris, France',
+				infowindow: {
+					content: 'This is what up!',
+				}
 			});
 
 			// Change the default 300px to 500px.
 			jQuery.fn.premiseGoogleMap.defaults.minHeight = 500;
 
 			jQuery('.premise-google-map2').premiseGoogleMap({
-				center: 'Plaza de Bolivar, Bogotá, Colombia',
+				center: 'Miami, FL',
 				marker: false
 			});
 
 			// Get rid of the min height param. we wont need it.
-			jQuery.fn.premiseGoogleMap.defaults.minHeight = '';
+			jQuery.fn.premiseGoogleMap.defaults.minHeight = 100;
 
 			jQuery('.premise-google-map3').premiseGoogleMap({
 				center: 'Chicago IL',
