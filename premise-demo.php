@@ -49,6 +49,9 @@ class Premise_Demo {
 	protected static $instance = null;
 
 
+	protected $opt_name = '_pwp_demo';
+
+
 
 
 	/**
@@ -90,15 +93,16 @@ class Premise_Demo {
 	public function new_page() {
 		if ( class_exists( 'Premise_options' ) ) {
 			$demo_options = array(
-				'title' => 'Premise Options Page',
-				'menu_title' => 'Premise Options',
+				'title'      => 'Premise Demo Page',
+				'menu_title' => 'Premise Demo',
 				'capability' => 'manage_options',
-				'menu_slug' => 'premise_options_page',
-				'callback' => array( $this, 'display_code' ),
-				'icon' => '',
-				'position' => '59.2',
+				'menu_slug'  => 'premise_demo_page',
+				'callback'   => array( $this, 'display_code' ),
+				'icon'       => '',
+				'position'   => '59.2',
 			);
-			new Premise_options( $demo_options );
+
+			new Premise_options( $demo_options, '', $this->opt_name );
 		}
 	}
 
@@ -123,9 +127,8 @@ class Premise_Demo {
 			// Premise_test::fields_demo();
 			// Premise_test::videos_embed();
 			// Premise_test::fields_duplicate();
-			Premise_test::google_map();
+			// Premise_test::google_map();
 
-			// Enter your code here..
 
 		echo '</div>';
 	}
