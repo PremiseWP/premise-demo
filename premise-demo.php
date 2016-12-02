@@ -49,6 +49,11 @@ class Premise_Demo {
 	protected static $instance = null;
 
 
+	/**
+	 * option name to use to retrieve data from db when using demo plugin
+	 *
+	 * @var string
+	 */
 	protected $opt_name = '_pwp_demo';
 
 
@@ -80,7 +85,6 @@ class Premise_Demo {
 	 * Hook our page to be created on init
 	 */
 	public function init() {
-
 		add_action( 'init', array( $this, 'new_page' ) );
 	}
 
