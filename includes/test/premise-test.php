@@ -877,44 +877,121 @@ class Premise_Test {
 		<h3>Google maps demo</h3><br />
 		<div class="premise-row">
 			<h4>Google Map, default height</h4>
-			<div class="premise-google-map1"></div>
+			<div class="premise-google-map"></div>
 
 			<h4>Google Map without Marker, 500px height</h4>
-			<div class="premise-google-map2"></div>
+			<div class="premise-google-map"></div>
 
 			<h4>Google Map, 16/9 ratio, zoom 5</h4>
 			<div class="premise-aspect-ratio-16-9">
-				<div class="premise-google-map3"></div>
+				<div class="premise-google-map"></div>
 			</div>
 		</div>
 		<script>
 			// Declare it globally as a default
-			jQuery.fn.premiseGoogleMap.defaults.key = 'AIzaSyBQ0ynXGK6HNdknMFc_RzZjs7GuGidhPow';
+			jQuery.fn.premiseGoogleMap.defaults.key = 'AIzaSyBT4NE75feyuFYEhik3JbyAKl0mYwkEt3o';
 
-			jQuery('.premise-google-map1').premiseGoogleMap({
+			var map = jQuery('.premise-google-map').premiseGoogleMap({
 				center: '1 avenue des Champs Elysées, Paris, France',
 				infowindow: {
 					content: 'This is what up!',
 				}
 			});
 
+			console.log( map );
+
 			// Change the default 300px to 500px.
-			jQuery.fn.premiseGoogleMap.defaults.minHeight = 500;
+			// jQuery.fn.premiseGoogleMap.defaults.minHeight = 500;
 
-			jQuery('.premise-google-map2').premiseGoogleMap({
-				center: 'Miami, FL',
-				marker: false
-			});
+			// jQuery('.premise-google-map').premiseGoogleMap({
+			// 	center: 'Miami, FL',
+			// 	marker: false
+			// });
 
-			// Get rid of the min height param. we wont need it.
-			jQuery.fn.premiseGoogleMap.defaults.minHeight = 100;
+			// // Get rid of the min height param. we wont need it.
+			// jQuery.fn.premiseGoogleMap.defaults.minHeight = 100;
 
-			jQuery('.premise-google-map3').premiseGoogleMap({
-				center: 'Chicago IL',
-				zoom: 5
-			});
+			// jQuery('.premise-google-map').premiseGoogleMap({
+			// 	center: 'Chicago IL',
+			// 	zoom: 5
+			// });
 
 		</script>
 		<?php
+
+		public static function grids() {
+			?><h3>Premise Row</h3>
+			<div class="premise-row">
+				<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
+				<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
+				<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
+
+				<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
+				<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
+				<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
+			</div>
+
+			<h3>Premise Row Float Right</h3>
+			<div class="premise-row float-right">
+				<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
+				<div class="span4" style="background: #ccc;">
+					<div class="premise-aspect-ratio-4-3">
+						<div class="premise-align-center" style="background: #ccc;">span4</div>
+					</div>
+				</div>
+			</div>
+
+			<h3>Premise Row Not Responsive</h3>
+			<div class="premise-row not-responsive">
+				<div class="span3" style="background: #ccc;">&nbsp;</div>
+				<div class="span3" style="background: #ccc;">&nbsp;</div>
+				<div class="span6" style="background: #ccc;">&nbsp;</div>
+			</div>
+
+			<h3>Premise Inline</h3>
+			<div class="premise-inline">
+				<div class="span4" style="background: #ccc;">&nbsp;</div>
+				<div class="span3" style="background: #ccc;">&nbsp;</div>
+				<div class="span5" style="background: #ccc;">&nbsp;</div>
+			</div>
+
+			<h1>Width of actual classes without 'premise-row' or peremise-inline wrappers</h1>
+
+			<h3>span 1</3>
+			<div class="span1" style="background: #ccc;">&nbsp;</div>
+			<h3>span</h3>
+			<div class="span2" style="background: #ccc;">&nbsp;</div>
+			<h3>span</h3>
+			<div class="span3" style="background: #ccc;">&nbsp;</div>
+			<h3>span</h3>
+			<div class="span4" style="background: #ccc;">&nbsp;</div>
+			<h3>span</h3>
+			<div class="span5" style="background: #ccc;">&nbsp;</div>
+			<h3>span6</h3>
+			<div class="span6" style="background: #ccc;">&nbsp;</div>
+			<h3>span7</h3>
+			<div class="span7" style="background: #ccc;">&nbsp;</div>
+			<h3>span8</h3>
+			<div class="span8" style="background: #ccc;">&nbsp;</div>
+			<h3>span9</h3>
+			<div class="span9" style="background: #ccc;">&nbsp;</div>
+			<h3>span10</h3>
+			<div class="span10" style="background: #ccc;">&nbsp;</div>
+			<h3>span11</h3>
+			<div class="span11" style="background: #ccc;">&nbsp;</div>
+			<h3>span12</h3>
+			<div class="span12" style="background: #ccc;">&nbsp;</div>
+
+			<h3>col2</h3>
+			<div class="col2" style="background: #ccc;">&nbsp;</div>
+			<h3>col3</h3>
+			<div class="col3" style="background: #ccc;">&nbsp;</div>
+			<h3>col4</h3>
+			<div class="col4" style="background: #ccc;">&nbsp;</div>
+			<h3>col5</h3>
+			<div class="col5" style="background: #ccc;">&nbsp;</div>
+			<h3>col6</h3>
+			<div class="col6" style="background: #ccc;">&nbsp;</div><?
+		}
 	}
 }

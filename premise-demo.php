@@ -86,6 +86,11 @@ class Premise_Demo {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
+
+		add_action( '', '' );
+		add_action( '', '' );
+		add_action( '', '' );
+		add_action( '', '' );
 	}
 
 
@@ -132,7 +137,7 @@ class Premise_Demo {
 			// Premise_test::videos_embed();
 			// Premise_test::fields_duplicate();
 			// Premise_test::google_map();
-
+			Premise_test::grids();
 
 		echo '</div>';
 	}
