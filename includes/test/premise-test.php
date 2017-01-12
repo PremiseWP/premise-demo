@@ -919,79 +919,81 @@ class Premise_Test {
 		</script>
 		<?php
 
-		public static function grids() {
-			?><h3>Premise Row</h3>
-			<div class="premise-row">
-				<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-				<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-				<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
+	}
 
-				<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
-				<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
-				<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
-			</div>
 
-			<h3>Premise Row Float Right</h3>
-			<div class="premise-row float-right">
-				<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
-				<div class="span4" style="background: #ccc;">
-					<div class="premise-aspect-ratio-4-3">
-						<div class="premise-align-center" style="background: #ccc;">span4</div>
-					</div>
+	public static function grids() {
+		?><h3>Premise Row</h3>
+		<div class="premise-row">
+			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
+			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
+			<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
+
+			<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
+			<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
+			<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
+		</div>
+
+		<h3>Premise Row Float Right</h3>
+		<div class="premise-row float-right">
+			<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
+			<div class="span4" style="background: #ccc;">
+				<div class="premise-aspect-ratio-4-3">
+					<div class="premise-align-center" style="background: #ccc;">span4</div>
 				</div>
 			</div>
+		</div>
 
-			<h3>Premise Row Not Responsive</h3>
-			<div class="premise-row not-responsive">
-				<div class="span3" style="background: #ccc;">&nbsp;</div>
-				<div class="span3" style="background: #ccc;">&nbsp;</div>
-				<div class="span6" style="background: #ccc;">&nbsp;</div>
-			</div>
-
-			<h3>Premise Inline</h3>
-			<div class="premise-inline">
-				<div class="span4" style="background: #ccc;">&nbsp;</div>
-				<div class="span3" style="background: #ccc;">&nbsp;</div>
-				<div class="span5" style="background: #ccc;">&nbsp;</div>
-			</div>
-
-			<h1>Width of actual classes without 'premise-row' or peremise-inline wrappers</h1>
-
-			<h3>span 1</3>
-			<div class="span1" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
-			<div class="span2" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
+		<h3>Premise Row Not Responsive</h3>
+		<div class="premise-row not-responsive">
 			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
-			<div class="span4" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
-			<div class="span5" style="background: #ccc;">&nbsp;</div>
-			<h3>span6</h3>
+			<div class="span3" style="background: #ccc;">&nbsp;</div>
 			<div class="span6" style="background: #ccc;">&nbsp;</div>
-			<h3>span7</h3>
-			<div class="span7" style="background: #ccc;">&nbsp;</div>
-			<h3>span8</h3>
-			<div class="span8" style="background: #ccc;">&nbsp;</div>
-			<h3>span9</h3>
-			<div class="span9" style="background: #ccc;">&nbsp;</div>
-			<h3>span10</h3>
-			<div class="span10" style="background: #ccc;">&nbsp;</div>
-			<h3>span11</h3>
-			<div class="span11" style="background: #ccc;">&nbsp;</div>
-			<h3>span12</h3>
-			<div class="span12" style="background: #ccc;">&nbsp;</div>
+		</div>
 
-			<h3>col2</h3>
-			<div class="col2" style="background: #ccc;">&nbsp;</div>
-			<h3>col3</h3>
-			<div class="col3" style="background: #ccc;">&nbsp;</div>
-			<h3>col4</h3>
-			<div class="col4" style="background: #ccc;">&nbsp;</div>
-			<h3>col5</h3>
-			<div class="col5" style="background: #ccc;">&nbsp;</div>
-			<h3>col6</h3>
-			<div class="col6" style="background: #ccc;">&nbsp;</div><?
-		}
+		<h3>Premise Inline</h3>
+		<div class="premise-inline">
+			<div class="span4" style="background: #ccc;">&nbsp;</div>
+			<div class="span3" style="background: #ccc;">&nbsp;</div>
+			<div class="span5" style="background: #ccc;">&nbsp;</div>
+		</div>
+
+		<h1>Width of actual classes without 'premise-row' or peremise-inline wrappers</h1>
+
+		<h3>span 1</3>
+		<div class="span1" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span2" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span3" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span4" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span5" style="background: #ccc;">&nbsp;</div>
+		<h3>span6</h3>
+		<div class="span6" style="background: #ccc;">&nbsp;</div>
+		<h3>span7</h3>
+		<div class="span7" style="background: #ccc;">&nbsp;</div>
+		<h3>span8</h3>
+		<div class="span8" style="background: #ccc;">&nbsp;</div>
+		<h3>span9</h3>
+		<div class="span9" style="background: #ccc;">&nbsp;</div>
+		<h3>span10</h3>
+		<div class="span10" style="background: #ccc;">&nbsp;</div>
+		<h3>span11</h3>
+		<div class="span11" style="background: #ccc;">&nbsp;</div>
+		<h3>span12</h3>
+		<div class="span12" style="background: #ccc;">&nbsp;</div>
+
+		<h3>col2</h3>
+		<div class="col2" style="background: #ccc;">&nbsp;</div>
+		<h3>col3</h3>
+		<div class="col3" style="background: #ccc;">&nbsp;</div>
+		<h3>col4</h3>
+		<div class="col4" style="background: #ccc;">&nbsp;</div>
+		<h3>col5</h3>
+		<div class="col5" style="background: #ccc;">&nbsp;</div>
+		<h3>col6</h3>
+		<div class="col6" style="background: #ccc;">&nbsp;</div><?
 	}
 }

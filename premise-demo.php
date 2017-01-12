@@ -131,6 +131,8 @@ class Premise_Demo {
 
 			require 'includes/test/premise-test.php';
 
+
+
 			// Premise_test::fields();
 			// Premise_test::fields_hooks();
 			// Premise_test::fields_demo();
