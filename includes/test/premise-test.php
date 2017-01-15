@@ -191,7 +191,7 @@ class Premise_Test {
 			array(
 				'name' => 'input10',
 				'label' => 'Required text input',
-				'required' => 'required',
+				'required' => true,
 			)
 		);
 		echo PHP_EOL;
@@ -241,7 +241,7 @@ class Premise_Test {
 			array(
 				'name' => 'input15',
 				'label' => 'Text input with custom attribute (onclick)',
-				'attribute' => 'onclick="alert(\'Dont you click me!\');"',
+				'attribute' => 'onclick="alert(\'Dont you click me!\');" onload="suck my dick"',
 			)
 		);
 		echo PHP_EOL;

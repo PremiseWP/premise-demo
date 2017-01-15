@@ -132,9 +132,9 @@ class Premise_Demo {
 
 			// test a form with all possible fields.
 			// pass your own arguments if you'd like.
-			new PWP_Demo_Form();
+			// new PWP_Demo_Form();
 
-			// Premise_test::fields();
+			Premise_test::fields();
 			// Premise_test::fields_hooks();
 			// Premise_test::fields_demo();
 			// Premise_test::videos_embed();

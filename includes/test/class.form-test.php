@@ -100,20 +100,20 @@ class PWP_Demo_Form extends PWP_Form {
 		array(
 			'type' => 'button',
 			'name' => '[button]',
-			'label' => 'button',
+			// 'label' => 'button', // no label needed for buttons
 			'class' => 'button-field',
 			'value' => 'Button',
 		),
 		array(
 			'type' => 'reset',
 			'name' => '[reset]',
-			'label' => 'reset',
+			// 'label' => 'reset', // no label needed for buttons
 			'class' => 'reset-field',
 		),
 		array(
 			'type' => 'submit',
 			'name' => '[submit]',
-			'label' => 'submit',
+			// 'label' => 'submit', // no label needed for buttons
 			'class' => 'reset-field',
 		),
 		array(
