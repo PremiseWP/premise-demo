@@ -251,7 +251,7 @@ class Premise_Test {
 			array(
 				'name' => 'input16',
 				'label' => 'Text input with onclick',
-				'onclick' => 'alert(\'Don\'t you click me!\');',
+				'onclick' => 'alert(\'Dont you click me!\');',
 			)
 		);
 		echo PHP_EOL;
@@ -279,6 +279,14 @@ class Premise_Test {
 			array(
 				'name' => 'input19',
 				'label' => 'WP Media upload button',
+			)
+		);
+
+		// 20. fa Icon upload button.
+		premise_field( 'fa_icon',
+			array(
+				'name' => 'input20',
+				'label' => 'FA Icon field',
 			)
 		);
 		echo PHP_EOL;
@@ -919,79 +927,128 @@ class Premise_Test {
 		</script>
 		<?php
 
-		public static function grids() {
-			?><h3>Premise Row</h3>
-			<div class="premise-row">
-				<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-				<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-				<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
+	}
 
-				<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
-				<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
-				<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
-			</div>
 
-			<h3>Premise Row Float Right</h3>
-			<div class="premise-row float-right">
-				<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
-				<div class="span4" style="background: #ccc;">
-					<div class="premise-aspect-ratio-4-3">
-						<div class="premise-align-center" style="background: #ccc;">span4</div>
-					</div>
+	public static function grids() {
+		?><h3>Premise Row</h3>
+		<div class="premise-row">
+			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
+			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
+			<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
+
+			<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
+			<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
+			<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
+		</div>
+
+		<hr>
+
+		<h3>Premise Row Float Right</h3>
+		<div class="premise-row float-right">
+			<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
+			<div class="span4" style="background: #ccc;">
+				<div class="premise-aspect-ratio-4-3">
+					<div class="premise-align-center" style="background: #ccc;">span4</div>
 				</div>
 			</div>
+		</div>
 
-			<h3>Premise Row Not Responsive</h3>
-			<div class="premise-row not-responsive">
-				<div class="span3" style="background: #ccc;">&nbsp;</div>
-				<div class="span3" style="background: #ccc;">&nbsp;</div>
-				<div class="span6" style="background: #ccc;">&nbsp;</div>
-			</div>
+		<hr>
 
-			<h3>Premise Inline</h3>
-			<div class="premise-inline">
-				<div class="span4" style="background: #ccc;">&nbsp;</div>
-				<div class="span3" style="background: #ccc;">&nbsp;</div>
-				<div class="span5" style="background: #ccc;">&nbsp;</div>
-			</div>
-
-			<h1>Width of actual classes without 'premise-row' or peremise-inline wrappers</h1>
-
-			<h3>span 1</3>
-			<div class="span1" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
-			<div class="span2" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
+		<h3>Premise Row Not Responsive</h3>
+		<div class="premise-row not-responsive">
 			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
-			<div class="span4" style="background: #ccc;">&nbsp;</div>
-			<h3>span</h3>
-			<div class="span5" style="background: #ccc;">&nbsp;</div>
-			<h3>span6</h3>
+			<div class="span3" style="background: #ccc;">&nbsp;</div>
 			<div class="span6" style="background: #ccc;">&nbsp;</div>
-			<h3>span7</h3>
-			<div class="span7" style="background: #ccc;">&nbsp;</div>
-			<h3>span8</h3>
-			<div class="span8" style="background: #ccc;">&nbsp;</div>
-			<h3>span9</h3>
-			<div class="span9" style="background: #ccc;">&nbsp;</div>
-			<h3>span10</h3>
-			<div class="span10" style="background: #ccc;">&nbsp;</div>
-			<h3>span11</h3>
-			<div class="span11" style="background: #ccc;">&nbsp;</div>
-			<h3>span12</h3>
-			<div class="span12" style="background: #ccc;">&nbsp;</div>
+		</div>
 
-			<h3>col2</h3>
-			<div class="col2" style="background: #ccc;">&nbsp;</div>
-			<h3>col3</h3>
-			<div class="col3" style="background: #ccc;">&nbsp;</div>
-			<h3>col4</h3>
-			<div class="col4" style="background: #ccc;">&nbsp;</div>
-			<h3>col5</h3>
-			<div class="col5" style="background: #ccc;">&nbsp;</div>
-			<h3>col6</h3>
-			<div class="col6" style="background: #ccc;">&nbsp;</div><?
-		}
+		<hr>
+
+		<h3>Premise Row Force Columns</h3>
+		<p>also works with class <code>float-right</code></p>
+		<div class="pwp-row force-columns">
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
+
+Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
+
+Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+		</div>
+
+		<h3>Premise Row Without Forcing Columns</h3>
+		<div class="pwp-row">
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
+
+Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
+
+Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+		</div>
+
+		<hr>
+
+		<h3>Premise Inline</h3>
+		<div class="premise-inline">
+			<div class="span4" style="background: #ccc;">&nbsp;</div>
+			<div class="span3" style="background: #ccc;">&nbsp;</div>
+			<div class="span5" style="background: #ccc;">&nbsp;</div>
+		</div>
+
+		<hr>
+
+		<h1>Width of actual classes without 'premise-row' or peremise-inline wrappers</h1>
+
+		<h3>span 1</3>
+		<div class="span1" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span2" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span3" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span4" style="background: #ccc;">&nbsp;</div>
+		<h3>span</h3>
+		<div class="span5" style="background: #ccc;">&nbsp;</div>
+		<h3>span6</h3>
+		<div class="span6" style="background: #ccc;">&nbsp;</div>
+		<h3>span7</h3>
+		<div class="span7" style="background: #ccc;">&nbsp;</div>
+		<h3>span8</h3>
+		<div class="span8" style="background: #ccc;">&nbsp;</div>
+		<h3>span9</h3>
+		<div class="span9" style="background: #ccc;">&nbsp;</div>
+		<h3>span10</h3>
+		<div class="span10" style="background: #ccc;">&nbsp;</div>
+		<h3>span11</h3>
+		<div class="span11" style="background: #ccc;">&nbsp;</div>
+		<h3>span12</h3>
+		<div class="span12" style="background: #ccc;">&nbsp;</div>
+
+		<hr>
+
+		<h3>col2</h3>
+		<div class="col2" style="background: #ccc;">&nbsp;</div>
+		<h3>col3</h3>
+		<div class="col3" style="background: #ccc;">&nbsp;</div>
+		<h3>col4</h3>
+		<div class="col4" style="background: #ccc;">&nbsp;</div>
+		<h3>col5</h3>
+		<div class="col5" style="background: #ccc;">&nbsp;</div>
+		<h3>col6</h3>
+		<div class="col6" style="background: #ccc;">&nbsp;</div><?
 	}
 }
