@@ -88,6 +88,19 @@ class Premise_Demo {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
+
+		pwp_add_metabox( 'the title', array( 'post', 'page' ), array(
+			array(
+				'type' => 'text',
+				'name' => 'my_name[text]',
+				'context' => 'post',
+			),
+			array(
+				'type' => 'textarea',
+				'name' => 'my_name[textarea]',
+				'context' => 'post',
+			),
+		) );
 	}
 
 
@@ -130,11 +143,13 @@ class Premise_Demo {
 	public function display_code() {
 		echo '<div class="wrap">';
 
+
+
 			// test a form with all possible fields.
 			// pass your own arguments if you'd like.
 			// new PWP_Demo_Form();
 
-			Premise_test::fields();
+			// Premise_test::fields();
 			// Premise_test::fields_hooks();
 			// Premise_test::fields_demo();
 			// Premise_test::videos_embed();

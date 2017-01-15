@@ -279,6 +279,8 @@ class Premise_Test {
 			array(
 				'name' => 'input19',
 				'label' => 'WP Media upload button',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 
@@ -596,6 +598,8 @@ class Premise_Test {
 				'name' => 'input3',
 				'label' => 'WP Media input',
 				'wrapper_class' => 'col2',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 
@@ -665,6 +669,8 @@ class Premise_Test {
 				'name' => '3',
 				'label' => 'WP Media input',
 				'wrapper_class' => 'col2',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 		premise_field(
