@@ -74,9 +74,11 @@ class Premise_Demo {
 
 
 	/**
-	 * Intentionally left empty
+	 * require classes
 	 */
-	function __construct() {}
+	function __construct() {
+
+	}
 
 
 
@@ -86,11 +88,6 @@ class Premise_Demo {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
-
-		add_action( '', '' );
-		add_action( '', '' );
-		add_action( '', '' );
-		add_action( '', '' );
 	}
 
 
@@ -101,6 +98,10 @@ class Premise_Demo {
 	 */
 	public function new_page() {
 		if ( class_exists( 'Premise_options' ) ) {
+
+			require 'includes/test/premise-test.php';
+			require 'includes/test/class.form-test.php';
+
 			$demo_options = array(
 				'title'      => 'Premise Demo Page',
 				'menu_title' => 'Premise Demo',
@@ -129,113 +130,9 @@ class Premise_Demo {
 	public function display_code() {
 		echo '<div class="wrap">';
 
-			require 'includes/test/premise-test.php';
-
-			$fields = array(
-				'text' => array(
-					'class' => 'text-field',
-				),
-				'radio' => array(
-					'class' => 'radio-field',
-				),
-				'checkbox' => array(
-					'class' => 'checkbox-field',
-				),
-				'button' => array(
-					'class' => 'button-field',
-					'value' => 'Button',
-				),
-				'reset' => array(
-					'class' => 'reset-field',
-				),
-				'submit' => array(
-					'class' => 'reset-field',
-				),
-				'color' => array(
-					'class' => 'color-field',
-				),
-				'date' => array(
-					'class' => 'date-field',
-				),
-				'datetime' => array(
-					'class' => 'datetime-field',
-				),
-				'datetime-local' => array(
-					'class' => 'datetime-field',
-				),
-				'email' => array(
-					'class' => 'email-field',
-				),
-				'month' => array(
-					'class' => 'month-field',
-				),
-				'number' => array(
-					'class' => 'number-field',
-				),
-				'range' => array(
-					'class' => 'range-field',
-				),
-				'search' => array(
-					'class' => 'search-field',
-				),
-				'tel' => array(
-					'class' => 'tel-field',
-				),
-				'time' => array(
-					'class' => 'time-field',
-				),
-				'url' => array(
-					'class' => 'url-field',
-				),
-				'week' => array(
-					'class' => 'week-field',
-				),
-				'wp_media' => array(
-					'class' => 'wp_media',
-				),
-				'fa_icon' => array(
-					'class' => 'fa_icon',
-				),
-				'video' => array(
-					'class' => 'video',
-				),
-				'wp_color' => array(
-					'class' => 'wp_color',
-				),
-				'div' => array(
-					'tag' => 'div',
-					'id' => 'div_id',
-					'class' => 'div_class',
-					'value' => 'This div says fuck you!',
-				),
-			);
-
-			$form['name'] = $this->opt_name;
-			$form['action'] = '';
-			$form['method'] = '';
-			$form['enctype'] = '';
-			$form['fields'] = $fields;
-
-			foreach ( $form['fields'] as $k => $f ) {
-				if ( 'button' !== $k && 'reset' !== $k && 'submit' !== $k ) {
-					$f['label'] = str_replace( '-', ' ', ucwords( $k ) );
-				}
-			}
-
-			pwp_form( $form );
-
-			// foreach ( $fields as $k => $f ) {
-			// 	$label = '';
-			// 	if ( 'button' !== $k && 'reset' !== $k && 'submit' !== $k ) {
-			// 		$label = str_replace( '-', ' ', ucwords( $k ) );
-			// 	}
-			// 	pwp_field( array(
-			// 		'type' => $k,
-			// 		'name' => $this->opt_name.'['.$k.']',
-			// 		'label' => $label,
-			// 	)+$f );
-			// }
-
+			// test a form with all possible fields.
+			// pass your own arguments if you'd like.
+			new PWP_Demo_Form();
 
 			// Premise_test::fields();
 			// Premise_test::fields_hooks();
