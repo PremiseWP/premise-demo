@@ -89,18 +89,47 @@ class Premise_Demo {
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
 
-		pwp_add_metabox( 'the title', array( 'post', 'page' ), array(
+		$fields = array(
 			array(
 				'type' => 'text',
-				'name' => 'my_name[text]',
+				'name' => '[text]',
 				'context' => 'post',
 			),
 			array(
 				'type' => 'textarea',
-				'name' => 'my_name[textarea]',
+				'name' => '[textarea]',
 				'context' => 'post',
 			),
-		), 'my_name' );
+			array(
+				'type' => 'wp_media',
+				'name' => '[wp_media]',
+				'context' => 'post',
+			),
+			array(
+				'type' => 'fa_icon',
+				'name' => '[wp_media]',
+				'context' => 'post',
+			),
+		);
+
+		// Test Meta Box
+		$fields['name_prefix']  = 'tmb';
+		pwp_add_metabox( 'Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
+		// Test Meta Box 2 - only on posts
+		$fields['name_prefix']  = 'tmb2';
+		pwp_add_metabox( 'Test Meta Box 2', array( 'post' ), $fields, $fields['name_prefix'] );
+		// Test Meta Box 3
+		$fields['name_prefix']  = 'tmb3';
+		$the_metabox = array(
+			'id'            => 'tmb-id-3',
+			'title'         => 'Test Meta Box 3',
+			'callback'      => 'test_mb3_cb',
+			'screen'        => array( 'post', 'page' ),
+			'context'       => 'advanced',
+			// 'priority'      => 'default',
+			// 'callback_args' => '',
+		);
+		pwp_add_metabox( $the_metabox, '', '', $fields['name_prefix'] );
 	}
 
 
@@ -159,4 +188,11 @@ class Premise_Demo {
 
 		echo '</div>';
 	}
+}
+
+
+function test_mb3_cb( $p ) {
+	?><pre>
+		<? var_dump($p); ?>
+	</pre><?
 }
