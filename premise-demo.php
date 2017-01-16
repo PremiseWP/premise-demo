@@ -100,7 +100,7 @@ class Premise_Demo {
 				'name' => 'my_name[textarea]',
 				'context' => 'post',
 			),
-		) );
+		), 'my_name' );
 	}
 
 
