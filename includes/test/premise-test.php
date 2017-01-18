@@ -951,6 +951,17 @@ class Premise_Test {
 
 		<hr>
 
+		<h3>Premise Row Flush</h3>
+		<div class="premise-row flush-columns not-responsive">
+			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+
+			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+		</div>
+
 		<h3>Premise Row Float Right</h3>
 		<div class="premise-row float-right">
 			<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
