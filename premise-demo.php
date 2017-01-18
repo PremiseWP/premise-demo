@@ -77,7 +77,9 @@ class Premise_Demo {
 	 * require classes
 	 */
 	function __construct() {
-
+			require 'includes/test/premise-test.php';
+			require 'includes/test/class.form-test.php';
+			require 'includes/test/class.user-fields.php';
 	}
 
 
@@ -88,6 +90,19 @@ class Premise_Demo {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
+
+		new PWP_Demo_User_fields( array(
+			'title' => 'The fucking title',
+			'description' => 'The description',
+			'fields' => array(
+				array(
+					'type' => 'text',
+					'name' => 'my_name',
+					'context' => 'user',
+					'label' => 'Test Field',
+				),
+			),
+		), 'my_name' );
 
 		$fields = array(
 			array(
@@ -140,9 +155,6 @@ class Premise_Demo {
 	 */
 	public function new_page() {
 		if ( class_exists( 'Premise_options' ) ) {
-
-			require 'includes/test/premise-test.php';
-			require 'includes/test/class.form-test.php';
 
 			$demo_options = array(
 				'title'      => 'Premise Demo Page',

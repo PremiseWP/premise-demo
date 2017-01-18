@@ -4,7 +4,7 @@
 *
 * @package Premise Demo\Test
 */
-class PWP_Demo_Form extends PWP_Form {
+class PWP_Demo_Form {
 
 	/**
 	 * holds params needed to build a form
