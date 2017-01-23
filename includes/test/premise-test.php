@@ -532,12 +532,12 @@ class Premise_Test {
 		premise_field( 'text',
 			array(
 				'name' => 'hook14',
-				'label' => 'Wrapper class hook (should have .premise-align-center)',
+				'label' => 'Wrapper class hook (should have .pwp-align-center)',
 				'add_filter' => array(
 					array(
 						'premise_field_wrapper_class',
 						function( $wrapper_class ) {
-							return $wrapper_class . ' premise-align-center';
+							return $wrapper_class . ' pwp-align-center';
 						},
 					),
 				),
@@ -563,7 +563,7 @@ class Premise_Test {
 		?>
 		<h2>Premise WP framework</h2>
 		<h3>Fields demo</h3><br />
-		<div class="premise-row">
+		<div class="pwp-row">
 		<?php
 		// Premise Fields.
 		// 1. Text input.
@@ -617,7 +617,7 @@ class Premise_Test {
 			)
 		);
 		?>
-		</div><!-- /.premise-row -->
+		</div><!-- /.pwp-row -->
 		<?php
 	}
 
@@ -635,7 +635,7 @@ class Premise_Test {
 		?>
 		<h2>Premise WP framework</h2>
 		<h3>Fields demo</h3><br />
-		<div class="premise-row">
+		<div class="pwp-row">
 		<?php
 		// Premise Fields.
 		premise_field(
@@ -748,7 +748,7 @@ class Premise_Test {
 		?>
 		<h2>Premise WP framework</h2>
 		<h3>Fields demo</h3><br />
-		<div class="premise-row">
+		<div class="pwp-row">
 		<?php
 		// 1. Text input.
 		premise_field(
@@ -883,7 +883,7 @@ class Premise_Test {
 		?>
 		<h2>Premise WP framework</h2>
 		<h3>Google maps demo</h3><br />
-		<div class="premise-row">
+		<div class="pwp-row">
 			<h4>Google Map, default height</h4>
 			<div class="premise-google-map"></div>
 
@@ -933,24 +933,37 @@ class Premise_Test {
 
 	public static function grids() {
 		?><h3>Premise Row</h3>
-		<div class="premise-row">
-			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-			<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
+		<div class="pwp-row">
+			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
+			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
+			<div class="span6 pwp-align-center" style="background: #ccc;">span6</div>
 
-			<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
-			<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
-			<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
+			<div class="span2 pwp-align-center" style="background: #ccc;">span2</div>
+			<div class="span9 pwp-align-center" style="background: #ccc;">span9</div>
+			<div class="span1 pwp-align-center" style="background: #ccc;">span1</div>
+		</div>
+
+		<hr>
+
+		<h3>Premise Row Flushed Columns</h3>
+		<p>By default pwp-row adds a margin to our columns. To avoid this and create columns that
+			are flushed against each other simply add the class flush-columns to the pwp-row element.
+			Here is an example that will create 4 columns with no margin between them.</p>
+		<div class="pwp-row flush-columns">
+			<div class="col4" style="background: #ccc;">Some content..</div>
+			<div class="col4" style="background: #ccc;">Some content..</div>
+			<div class="col4" style="background: #ccc;">Some content..</div>
+			<div class="col4" style="background: #ccc;">Some content..</div>
 		</div>
 
 		<hr>
 
 		<h3>Premise Row Float Right</h3>
-		<div class="premise-row float-right">
-			<div class="span8 premise-align-center" style="background: #ccc;">This will stack on top when responding down</div>
+		<div class="pwp-row float-right">
+			<div class="span8 pwp-align-center" style="background: #ccc;">This will stack on top when responding down</div>
 			<div class="span4" style="background: #ccc;">
-				<div class="premise-aspect-ratio-4-3">
-					<div class="premise-align-center" style="background: #ccc;">span4</div>
+				<div class="pwp-aspect-ratio-4-3">
+					<div class="pwp-align-center" style="background: #ccc;">span4</div>
 				</div>
 			</div>
 		</div>
@@ -958,7 +971,7 @@ class Premise_Test {
 		<hr>
 
 		<h3>Premise Row Not Responsive</h3>
-		<div class="premise-row not-responsive">
+		<div class="pwp-row not-responsive">
 			<div class="span3" style="background: #ccc;">&nbsp;</div>
 			<div class="span3" style="background: #ccc;">&nbsp;</div>
 			<div class="span6" style="background: #ccc;">&nbsp;</div>
@@ -1004,7 +1017,7 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 		<hr>
 
 		<h3>Premise Inline</h3>
-		<div class="premise-inline">
+		<div class="pwp-inline">
 			<div class="span4" style="background: #ccc;">&nbsp;</div>
 			<div class="span3" style="background: #ccc;">&nbsp;</div>
 			<div class="span5" style="background: #ccc;">&nbsp;</div>
@@ -1012,7 +1025,25 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 
 		<hr>
 
-		<h1>Width of actual classes without 'premise-row' or peremise-inline wrappers</h1>
+		<h3>Premise Scroll</h3>
+		<p>If you want to add a row that does not wrap its content but rather,
+			lets you sroll left and right to see the entore row use the class pwp-scroller.</p>
+		<div class="pwp-scroller">
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3" style="background: #ccc;">Some content..</div>
+		</div>
+
+		<hr>
+
+		<h1>Width of actual classes without 'pwp-row' or pwp-inline wrappers</h1>
 
 		<h3>span 1</3>
 		<div class="span1" style="background: #ccc;">&nbsp;</div>
@@ -1050,6 +1081,6 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 		<h3>col5</h3>
 		<div class="col5" style="background: #ccc;">&nbsp;</div>
 		<h3>col6</h3>
-		<div class="col6" style="background: #ccc;">&nbsp;</div><?
+		<div class="col6" style="background: #ccc;">&nbsp;</div><?php
 	}
 }

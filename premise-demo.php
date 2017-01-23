@@ -243,7 +243,7 @@ class Premise_Demo {
 			// Premise_test::videos_embed();
 			// Premise_test::fields_duplicate();
 			// Premise_test::google_map();
-			// Premise_test::grids();
+			Premise_test::grids();
 
 		echo '</div>';
 	}
