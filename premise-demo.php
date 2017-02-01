@@ -79,7 +79,6 @@ class Premise_Demo {
 	function __construct() {
 			require 'includes/test/premise-test.php';
 			require 'includes/test/class.form-test.php';
-			require 'includes/test/class.user-fields.php';
 	}
 
 
@@ -91,19 +90,35 @@ class Premise_Demo {
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
 
-		new PWP_Demo_User_fields( array(
-			'title' => 'The fucking title',
-			'description' => 'The description',
-			'fields' => array(
-				array(
-					'type' => 'text',
-					'name' => 'my_name',
-					'context' => 'user',
-					'label' => 'Test Field',
+		// user fields test
+		if ( class_exists( 'PWP_User_fields' ) ) {
+			new PWP_User_fields( array(
+				'title' => 'Premise Demo Fields',
+				'description' => 'These fields were added with the premise demo plugin using PWP_User_fields class.',
+				'fields' => array(
+					array(
+						'type' => 'text',
+						'name' => 'my_name[test-field-1]',
+						'context' => 'user',
+						'label' => 'Test Field 1',
+					),
+					array(
+						'type' => 'text',
+						'name' => 'my_name[test-field-2]',
+						'context' => 'user',
+						'label' => 'Test Field 2',
+					),
+					array(
+						'type' => 'text',
+						'name' => 'my_name[test-field-3]',
+						'context' => 'user',
+						'label' => 'Test Field 3',
+					),
 				),
-			),
-		), 'my_name' );
+			), 'my_name' );
+		}
 
+		// metabox test
 		$fields = array(
 			array(
 				'type' => 'text',
@@ -126,52 +141,27 @@ class Premise_Demo {
 				'context' => 'post',
 			),
 		);
-
-		// Test Meta Box
-		$fields['name_prefix']  = 'tmb';
-		pwp_add_metabox( 'Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
-		// Test Meta Box 2 - only on posts
-		$fields['name_prefix']  = 'tmb2';
-		pwp_add_metabox( 'Test Meta Box 2', array( 'post' ), $fields, $fields['name_prefix'] );
-		// Test Meta Box 3
-		$fields['name_prefix']  = 'tmb3';
-		$the_metabox = array(
-			'id'            => 'tmb-id-3',
-			'title'         => 'Test Meta Box 3',
-			'callback'      => 'test_mb3_cb',
-			'screen'        => array( 'post', 'page' ),
-			'context'       => 'advanced',
-			// 'priority'      => 'default',
-			// 'callback_args' => '',
-		);
-		pwp_add_metabox( $the_metabox, '', '', $fields['name_prefix'] );
+		$fields['name_prefix']  = 'pwp_demo_post';
+		// pwp_add_metabox( 'Premise Demo Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
 	}
-
-
 
 	/**
 	 * Registsters the new page in the admin side for Premise Demo
 	 * if the Premise_Options class is available.
 	 */
 	public function new_page() {
-		if ( class_exists( 'Premise_options' ) ) {
+		$demo_options = array(
+			'title'      => 'Premise Demo Page',
+			'menu_title' => 'Premise Demo',
+			'capability' => 'manage_options',
+			'menu_slug'  => 'premise_demo_page',
+			'callback'   => array( $this, 'display_code' ),
+			'icon'       => '',
+			'position'   => '59.2',
+		);
 
-			$demo_options = array(
-				'title'      => 'Premise Demo Page',
-				'menu_title' => 'Premise Demo',
-				'capability' => 'manage_options',
-				'menu_slug'  => 'premise_demo_page',
-				'callback'   => array( $this, 'display_code' ),
-				'icon'       => '',
-				'position'   => '59.2',
-			);
-
-			new Premise_options( $demo_options, '', $this->opt_name );
-		}
+		// new PWP_Admin_Page( $demo_options, '', $this->opt_name );
 	}
-
-
-
 
 	/**
 	 * Display the code
@@ -182,9 +172,36 @@ class Premise_Demo {
 	 * @return string is supposed to echo the html content for the demo page
 	 */
 	public function display_code() {
-		echo '<div class="wrap">';
+		echo '<h1>Premise Demo Page</h1>';
 
+			$tabs = array(
+				// Premise Fields
+				array(
+					'title' => 'Premise Fields',
+					'content' => Premise_test::get_fields(),
+				),
+				// Premise Grids
+				array(
+					'title' => 'Premise Grids',
+					'content' => Premise_test::get_grids(),
+				),
+				// Premise Scroll
+				// array(
+				// 	'title' => 'Premise Scroll',
+				// 	'content' => '',
+				// ),
+				// Premise Goodle Map
+				array(
+					'title' => 'Premise Goodle Map',
+					'content' => Premise_test::get_maps(),
+				),
+			);
 
+			new Premise_Tabs( $tabs, 'accordion' );
+
+			echo 'hello';
+
+			// new PWP_Demo_Form(); // Test all possible fields
 
 			// test a form with all possible fields.
 			// pass your own arguments if you'd like.
@@ -197,14 +214,5 @@ class Premise_Demo {
 			// Premise_test::fields_duplicate();
 			// Premise_test::google_map();
 			// Premise_test::grids();
-
-		echo '</div>';
 	}
-}
-
-
-function test_mb3_cb( $p ) {
-	?><pre>
-		<? var_dump($p); ?>
-	</pre><?
 }
