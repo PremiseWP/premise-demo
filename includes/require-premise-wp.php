@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * This file requires Premise WP
  *
@@ -12,7 +12,7 @@ if ( ! class_exists( 'Premise_WP' ) ) {
     /**
      * Require the TGM_Plugin_Activation class.
      */
-    require_once 'includes/tgm-activation-plugin.php';
+    require_once 'tgm-activation-plugin.php';
 
     /**
      * Register TGM_Plugin_Activation Hook

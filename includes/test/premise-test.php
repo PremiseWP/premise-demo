@@ -938,28 +938,64 @@ class Premise_Test {
 
 
 	public static function grids() {
-		?><h3>Premise Row</h3>
-		<div class="premise-row">
-			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-			<div class="span3 premise-align-center" style="background: #ccc;">span3</div>
-			<div class="span6 premise-align-center" style="background: #ccc;">span6</div>
-
-			<div class="span2 premise-align-center" style="background: #ccc;">span2</div>
-			<div class="span9 premise-align-center" style="background: #ccc;">span9</div>
-			<div class="span1 premise-align-center" style="background: #ccc;">span1</div>
+		?>
+		<h3>Premise Row</h3>
+<div class="pwp-row">
+	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
+		<div class="pwp-aspect-ratio-4-3">
+			<div style="background: #ccc; ">&nbsp;</div>
 		</div>
+	</div>
+	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
+		<div class="pwp-aspect-ratio-4-3">
+			<div style="background: #ccc; ">&nbsp;</div>
+		</div>
+	</div>
+	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
+		<div class="pwp-aspect-ratio-4-3">
+			<div style="background: #ccc; ">&nbsp;</div>
+		</div>
+	</div>
+</div>
+
+<div class="pwp-row">
+	<div class="span3 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span9 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span8 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span5 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span5 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+</div>
 
 		<hr>
 
 		<h3>Premise Row Flush</h3>
-		<div class="premise-row flush-columns not-responsive">
-			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+		<div class="pwp-row flush-columns not-responsive">
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
 
-			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="premise-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
 		</div>
 
 		<h3>Premise Row Float Right</h3>

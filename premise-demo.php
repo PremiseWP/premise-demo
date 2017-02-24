@@ -129,10 +129,10 @@ class Premise_Demo {
 
 		// Test Meta Box
 		$fields['name_prefix']  = 'tmb';
-		pwp_add_metabox( 'Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
+		// pwp_add_metabox( 'Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
 		// Test Meta Box 2 - only on posts
 		$fields['name_prefix']  = 'tmb2';
-		pwp_add_metabox( 'Test Meta Box 2', array( 'post' ), $fields, $fields['name_prefix'] );
+		// pwp_add_metabox( 'Test Meta Box 2', array( 'post' ), $fields, $fields['name_prefix'] );
 		// Test Meta Box 3
 		$fields['name_prefix']  = 'tmb3';
 		$the_metabox = array(
@@ -144,7 +144,7 @@ class Premise_Demo {
 			// 'priority'      => 'default',
 			// 'callback_args' => '',
 		);
-		pwp_add_metabox( $the_metabox, '', '', $fields['name_prefix'] );
+		// pwp_add_metabox( $the_metabox, '', '', $fields['name_prefix'] );
 	}
 
 
@@ -184,7 +184,13 @@ class Premise_Demo {
 	public function display_code() {
 		echo '<div class="wrap">';
 
+			$text = 'Bad news. Andy Griffith turned us down. He didn\'t like his trailer. No! I was ashamed to be SEEN with you. I like being with you. Steve Holt! Did you enjoy your meal, Mom? You drank it fast enough.'.PHP_EOL.'Army had half a day. We just call it a sausage. Guy\'s a pro. Say goodbye to these, because it\'s the last time!';
 
+			echo nl2br( $text );
+var_dump(strlen( $text ));
+			if ( 50 <= strlen( $text ) ) {
+				echo $new_text = substr( $text, 0, ( strpos( $text, "\n", 0 ) ) - 0 );
+			}
 
 			// test a form with all possible fields.
 			// pass your own arguments if you'd like.
