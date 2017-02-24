@@ -11,23 +11,17 @@ class PWP_Demo_Form {
 	 *
 	 * @var array
 	 */
-	protected $test_form = array(
-		'name_prefix' => '',
-		'action'      => '',
-		'method'      => '',
-		'enctype'     => '',
+	private $_form = array(
+		'name_prefix' => 'pwp_demo',
+		'action'      => 'options.php',
+		'method'      => 'post',
+		'enctype'     => 'multipart/form-data',
 		'fields'      => array(),
 	);
 
-	function __construct( $form_args = '' ) {
-		if ( ! empty( $form_args ) ) {
-			parent::__construct( $form_args );
-		}
-		else {
-			$this->test_form['fields'] = $this->html_fields;
-			parent::__construct( $this->test_form );
-		}
-		echo $this->form;
+	function __construct( $fields = array() ) {
+		$this->_form['fields'] = ! empty( $fields ) ? $fields : $this->html_fields;
+		pwp_form( $this->_form );
 	}
 
 	// moved to the bottom for better class readability
