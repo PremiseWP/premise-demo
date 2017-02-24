@@ -27,9 +27,6 @@ class Premise_Test {
 	 */
 	protected static $instance = null;
 
-
-
-
 	/**
 	 * Access this plugin’s working instance
 	 *
@@ -41,14 +38,41 @@ class Premise_Test {
 		return self::$instance;
 	}
 
-
-
-
 	/**
 	 * Intentionally left empty
 	 */
 	function __construct() {}
 
+	/**
+	 * get all possible fields
+	 *
+	 * @return array fields
+	 */
+	public static function get_fields() {
+		return pwp_form( self::$html_fields, false );
+	}
+
+	/**
+	 * get all possible grids
+	 *
+	 * @return string girds
+	 */
+	public static function get_grids() {
+		ob_start();
+		self::grids();
+		return ob_get_clean();
+	}
+
+	/**
+	 * get maps
+	 *
+	 * @return string maps
+	 */
+	public static function get_maps() {
+		ob_start();
+		self::google_map();
+		return ob_get_clean();
+	}
 
 	/**
 	 * Fields tests
@@ -191,7 +215,7 @@ class Premise_Test {
 			array(
 				'name' => 'input10',
 				'label' => 'Required text input',
-				'required' => 'required',
+				'required' => true,
 			)
 		);
 		echo PHP_EOL;
@@ -241,7 +265,7 @@ class Premise_Test {
 			array(
 				'name' => 'input15',
 				'label' => 'Text input with custom attribute (onclick)',
-				'attribute' => 'onclick="alert(\'Dont you click me!\');"',
+				'attribute' => 'onclick="alert(\'Dont you click me!\');" onload="suck my dick"',
 			)
 		);
 		echo PHP_EOL;
@@ -279,6 +303,8 @@ class Premise_Test {
 			array(
 				'name' => 'input19',
 				'label' => 'WP Media upload button',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 
@@ -596,6 +622,8 @@ class Premise_Test {
 				'name' => 'input3',
 				'label' => 'WP Media input',
 				'wrapper_class' => 'col2',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 
@@ -665,6 +693,8 @@ class Premise_Test {
 				'name' => '3',
 				'label' => 'WP Media input',
 				'wrapper_class' => 'col2',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 		premise_field(
@@ -929,9 +959,13 @@ class Premise_Test {
 
 	}
 
-
-
+	/**
+	 * Print all possible grids
+	 *
+	 * @return string grids
+	 */
 	public static function grids() {
+<<<<<<< HEAD
 		?><h3>Premise Row</h3>
 		<div class="pwp-row">
 			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
@@ -954,9 +988,67 @@ class Premise_Test {
 			<div class="col4" style="background: #ccc;">Some content..</div>
 			<div class="col4" style="background: #ccc;">Some content..</div>
 			<div class="col4" style="background: #ccc;">Some content..</div>
+=======
+		?>
+		<h3>Premise Row</h3>
+<div class="pwp-row">
+	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
+		<div class="pwp-aspect-ratio-4-3">
+			<div style="background: #ccc; ">&nbsp;</div>
+>>>>>>> v2.0.0
 		</div>
+	</div>
+	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
+		<div class="pwp-aspect-ratio-4-3">
+			<div style="background: #ccc; ">&nbsp;</div>
+		</div>
+	</div>
+	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
+		<div class="pwp-aspect-ratio-4-3">
+			<div style="background: #ccc; ">&nbsp;</div>
+		</div>
+	</div>
+</div>
+
+<div class="pwp-row">
+	<div class="span3 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span9 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span8 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span5 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+	<div class="span5 pwp-align-center" style="margin-bottom: 1%;">
+		<div style="background: #ccc; height: 200px">&nbsp;</div>
+	</div>
+</div>
 
 		<hr>
+
+		<h3>Premise Row Flush</h3>
+		<div class="pwp-row flush-columns not-responsive">
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+		</div>
 
 		<h3>Premise Row Float Right</h3>
 		<div class="pwp-row float-right">
@@ -985,14 +1077,14 @@ class Premise_Test {
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
 
-Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
+			Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
 
-Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
+			Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 		</div>
@@ -1002,14 +1094,14 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
 
-Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
+			Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
 
-Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
+			Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
 		</div>
@@ -1083,4 +1175,176 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 		<h3>col6</h3>
 		<div class="col6" style="background: #ccc;">&nbsp;</div><?php
 	}
+
+	// moved to the bottom for better class readability
+	/**
+	 * holds all different types of html_fields
+	 *
+	 * @var array
+	 */
+	private static $html_fields = array(
+		array(
+			'type' => 'wp_media',
+			'name' => '[wp_media]',
+			'label' => 'wp_media',
+			'class' => 'wp_media',
+		),
+		array(
+			'type' => 'fa_icon',
+			'name' => '[fa_icon]',
+			'label' => 'fa_icon',
+			'class' => 'fa_icon',
+		),
+		array(
+			'type' => 'video',
+			'name' => '[video]',
+			'label' => 'video',
+			'class' => 'video',
+		),
+		array(
+			'type' => 'wp_color',
+			'name' => '[wp_color]',
+			'label' => 'wp_color',
+			'class' => 'wp_color',
+		),
+		array(
+			'type' => 'text',
+			'name' => '[text]',
+			'label' => 'text',
+			'class' => 'text-field',
+		),
+		array(
+			'type' => 'textarea',
+			'name' => '[textarea]',
+			'label' => 'textarea',
+			'class' => 'textarea-field',
+		),
+		array(
+			'type' => 'select',
+			'name' => '[select]',
+			'label' => 'select',
+			'options' => array(
+				'Select an option' => '',
+				'option 1' => 'option1',
+				'option 2' => 'option2',
+				'option 3' => 'option3',
+			),
+			'class' => 'select-field',
+		),
+		array(
+			'type' => 'radio',
+			'name' => '[radio]',
+			'label' => 'radio',
+			'class' => 'radio-field',
+		),
+		array(
+			'type' => 'checkbox',
+			'name' => '[checkbox]',
+			'label' => 'checkbox',
+			'class' => 'checkbox-field',
+		),
+		array(
+			'type' => 'button',
+			'name' => '[button]',
+			// 'label' => 'button', // no label needed for buttons
+			'class' => 'button-field',
+			'value' => 'Button',
+		),
+		array(
+			'type' => 'reset',
+			'name' => '[reset]',
+			// 'label' => 'reset', // no label needed for buttons
+			'class' => 'reset-field',
+		),
+		array(
+			'type' => 'submit',
+			'name' => '[submit]',
+			// 'label' => 'submit', // no label needed for buttons
+			'class' => 'reset-field',
+		),
+		array(
+			'type' => 'color',
+			'name' => '[color]',
+			'label' => 'color',
+			'class' => 'color-field',
+		),
+		array(
+			'type' => 'number',
+			'name' => '[number]',
+			'label' => 'number',
+			'class' => 'number-field',
+		),
+		array(
+			'type' => 'date',
+			'name' => '[date]',
+			'label' => 'date',
+			'class' => 'date-field',
+		),
+		array(
+			'type' => 'datetime',
+			'name' => '[datetime]',
+			'label' => 'datetime',
+			'class' => 'datetime-field',
+		),
+		array(
+			'type' => 'datetime-local',
+			'name' => '[datetime-local]',
+			'label' => 'datetime-local',
+			'class' => 'datetime-field',
+		),
+		array(
+			'type' => 'email',
+			'name' => '[email]',
+			'label' => 'email',
+			'class' => 'email-field',
+		),
+		array(
+			'type' => 'month',
+			'name' => '[month]',
+			'label' => 'month',
+			'class' => 'month-field',
+		),
+		array(
+			'type' => 'range',
+			'name' => '[range]',
+			'label' => 'range',
+			'class' => 'range-field',
+		),
+		array(
+			'type' => 'search',
+			'name' => '[search]',
+			'label' => 'search',
+			'class' => 'search-field',
+		),
+		array(
+			'type' => 'tel',
+			'name' => '[tel]',
+			'label' => 'tel',
+			'class' => 'tel-field',
+		),
+		array(
+			'type' => 'time',
+			'name' => '[time]',
+			'label' => 'time',
+			'class' => 'time-field',
+		),
+		array(
+			'type' => 'url',
+			'name' => '[url]',
+			'label' => 'url',
+			'class' => 'url-field',
+		),
+		array(
+			'type' => 'week',
+			'name' => '[week]',
+			'label' => 'week',
+			'class' => 'week-field',
+		),
+		array(
+			'tag' => 'div',
+			'id' => 'div_id',
+			'class' => 'div_class',
+			'value' => 'This div says fuck you!',
+		),
+	);
 }
