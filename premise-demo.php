@@ -89,82 +89,6 @@ class Premise_Demo {
 	 */
 	public function init() {
 		add_action( 'init', array( $this, 'new_page' ) );
-
-		// user fields test
-		if ( class_exists( 'PWP_User_fields' ) ) {
-			new PWP_User_fields( array(
-				'title' => 'Premise Demo Fields',
-				'description' => 'These fields were added with the premise demo plugin using PWP_User_fields class.',
-				'fields' => array(
-					array(
-						'type' => 'text',
-						'name' => 'my_name[test-field-1]',
-						'context' => 'user',
-						'label' => 'Test Field 1',
-					),
-					array(
-						'type' => 'text',
-						'name' => 'my_name[test-field-2]',
-						'context' => 'user',
-						'label' => 'Test Field 2',
-					),
-					array(
-						'type' => 'text',
-						'name' => 'my_name[test-field-3]',
-						'context' => 'user',
-						'label' => 'Test Field 3',
-					),
-				),
-			), 'my_name' );
-		}
-
-		// metabox test
-		$fields = array(
-			array(
-				'type' => 'text',
-				'name' => '[text]',
-				'context' => 'post',
-			),
-			array(
-				'type' => 'textarea',
-				'name' => '[textarea]',
-				'context' => 'post',
-			),
-			array(
-				'type' => 'wp_media',
-				'name' => '[wp_media]',
-				'context' => 'post',
-			),
-			array(
-				'type' => 'fa_icon',
-				'name' => '[wp_media]',
-				'context' => 'post',
-			),
-		);
-<<<<<<< HEAD
-
-		// Test Meta Box
-		$fields['name_prefix']  = 'tmb';
-		// pwp_add_metabox( 'Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
-		// Test Meta Box 2 - only on posts
-		$fields['name_prefix']  = 'tmb2';
-		// pwp_add_metabox( 'Test Meta Box 2', array( 'post' ), $fields, $fields['name_prefix'] );
-		// Test Meta Box 3
-		$fields['name_prefix']  = 'tmb3';
-		$the_metabox = array(
-			'id'            => 'tmb-id-3',
-			'title'         => 'Test Meta Box 3',
-			'callback'      => 'test_mb3_cb',
-			'screen'        => array( 'post', 'page' ),
-			'context'       => 'advanced',
-			// 'priority'      => 'default',
-			// 'callback_args' => '',
-		);
-		// pwp_add_metabox( $the_metabox, '', '', $fields['name_prefix'] );
-=======
-		$fields['name_prefix']  = 'pwp_demo_post';
-		// pwp_add_metabox( 'Premise Demo Test Meta Box', array( 'post', 'page' ), $fields, $fields['name_prefix'] );
->>>>>>> origin/v2.0.0
 	}
 
 	/**
@@ -182,7 +106,45 @@ class Premise_Demo {
 			'position'   => '59.2',
 		);
 
-		// new PWP_Admin_Page( $demo_options, '', $this->opt_name );
+		new PWP_Admin_Page( $demo_options, '', $this->opt_name );
+
+/**
+ * First we create the fields that we want to add to our page
+ *
+ * @var array
+ */
+$theme_options = array(
+	'action'      => 'options.php',
+	'name_prefix' => 'our_options_name', // notice that by placing the 'name' attribute here we avoid having to do it for each field
+	array(
+		'type' => 'wp_media',
+		'name' => '[theme-logo]',
+		'label' => 'Logo',
+		'preview' => true,
+	),
+	array(
+		'type' => 'select',
+		'name' => '[theme-layout]',
+		'label' => 'Layout',
+		'options' => array(
+			'Boxed' => 'boxed',
+			'Full Width' => 'full-width',
+		),
+	),
+	array(
+		'type' => 'textarea',
+		'name' => '[theme-copyright]',
+		'label' => 'Copyright',
+	),
+	array( 'type' => 'submit' ),
+);
+
+/**
+ * Title: Theme Options
+ * Fields: $theme_options
+ * Option Names: same as name attribute for fields
+ */
+// new PWP_Admin_Page( 'Theme Options', $theme_options, $theme_options['name_prefix'] );
 	}
 
 	/**
@@ -194,46 +156,9 @@ class Premise_Demo {
 	 * @return string is supposed to echo the html content for the demo page
 	 */
 	public function display_code() {
-		echo '<h1>Premise Demo Page</h1>';
+		echo '<h1>Premise Demo Page</h1>
+		<div class="span10">';
 
-<<<<<<< HEAD
-			$text = 'Bad news. Andy Griffith turned us down. He didn\'t like his trailer. No! I was ashamed to be SEEN with you. I like being with you. Steve Holt! Did you enjoy your meal, Mom? You drank it fast enough.'.PHP_EOL.'Army had half a day. We just call it a sausage. Guy\'s a pro. Say goodbye to these, because it\'s the last time!';
-
-			echo nl2br( $text );
-var_dump(strlen( $text ));
-			if ( 50 <= strlen( $text ) ) {
-				echo $new_text = substr( $text, 0, ( strpos( $text, "\n", 0 ) ) - 0 );
-			}
-=======
-			$tabs = array(
-				// Premise Fields
-				array(
-					'title' => 'Premise Fields',
-					'content' => Premise_test::get_fields(),
-				),
-				// Premise Grids
-				array(
-					'title' => 'Premise Grids',
-					'content' => Premise_test::get_grids(),
-				),
-				// Premise Scroll
-				// array(
-				// 	'title' => 'Premise Scroll',
-				// 	'content' => '',
-				// ),
-				// Premise Goodle Map
-				array(
-					'title' => 'Premise Goodle Map',
-					'content' => Premise_test::get_maps(),
-				),
-			);
-
-			new Premise_Tabs( $tabs, 'accordion' );
-
-			echo 'hello';
-
-			// new PWP_Demo_Form(); // Test all possible fields
->>>>>>> origin/v2.0.0
 
 			// test a form with all possible fields.
 			// pass your own arguments if you'd like.
@@ -245,12 +170,8 @@ var_dump(strlen( $text ));
 			// Premise_test::videos_embed();
 			// Premise_test::fields_duplicate();
 			// Premise_test::google_map();
-<<<<<<< HEAD
 			Premise_test::grids();
 
 		echo '</div>';
-=======
-			// Premise_test::grids();
->>>>>>> v2.0.0
 	}
 }

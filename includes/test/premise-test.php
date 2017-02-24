@@ -965,108 +965,52 @@ class Premise_Test {
 	 * @return string grids
 	 */
 	public static function grids() {
-<<<<<<< HEAD
-		?><h3>Premise Row</h3>
-		<div class="pwp-row">
-			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
-			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
-			<div class="span6 pwp-align-center" style="background: #ccc;">span6</div>
 
-			<div class="span2 pwp-align-center" style="background: #ccc;">span2</div>
-			<div class="span9 pwp-align-center" style="background: #ccc;">span9</div>
-			<div class="span1 pwp-align-center" style="background: #ccc;">span1</div>
-		</div>
-
-		<hr>
-
-		<h3>Premise Row Flushed Columns</h3>
-		<p>By default pwp-row adds a margin to our columns. To avoid this and create columns that
-			are flushed against each other simply add the class flush-columns to the pwp-row element.
-			Here is an example that will create 4 columns with no margin between them.</p>
-		<div class="pwp-row flush-columns">
-			<div class="col4" style="background: #ccc;">Some content..</div>
-			<div class="col4" style="background: #ccc;">Some content..</div>
-			<div class="col4" style="background: #ccc;">Some content..</div>
-			<div class="col4" style="background: #ccc;">Some content..</div>
-=======
 		?>
 		<h3>Premise Row</h3>
-<div class="pwp-row">
-	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
-		<div class="pwp-aspect-ratio-4-3">
-			<div style="background: #ccc; ">&nbsp;</div>
->>>>>>> v2.0.0
+		<div class="pwp-row">
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
-	</div>
-	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
-		<div class="pwp-aspect-ratio-4-3">
-			<div style="background: #ccc; ">&nbsp;</div>
-		</div>
-	</div>
-	<div class="col3 pwp-align-center" style="margin-bottom: 2%;">
-		<div class="pwp-aspect-ratio-4-3">
-			<div style="background: #ccc; ">&nbsp;</div>
-		</div>
-	</div>
-</div>
 
-<div class="pwp-row">
-	<div class="span3 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span9 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span8 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span5 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span2 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-	<div class="span5 pwp-align-center" style="margin-bottom: 1%;">
-		<div style="background: #ccc; height: 200px">&nbsp;</div>
-	</div>
-</div>
+		<div class="pwp-row">
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span9 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span9</div>
+			<div class="span8 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span8</div>
+			<div class="span2 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span2</div>
+			<div class="span2 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span2</div>
+			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
+			<div class="span2 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span2</div>
+			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
+		</div>
 
 		<hr>
 
 		<h3>Premise Row Flush</h3>
 		<div class="pwp-row flush-columns not-responsive">
-			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
 
-			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
-			<div class="col6"><div class="pwp-aspect-ratio-4-3"><div style="background: #ccc;border: 1px solid #888;"></div></div></div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
 		</div>
 
 		<h3>Premise Row Float Right</h3>
 		<div class="pwp-row float-right">
-			<div class="span8 pwp-align-center" style="background: #ccc;">This will stack on top when responding down</div>
-			<div class="span4" style="background: #ccc;">
-				<div class="pwp-aspect-ratio-4-3">
-					<div class="pwp-align-center" style="background: #ccc;">span4</div>
-				</div>
-			</div>
+			<div class="span8 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">This will stack on top when responding down</div>
+			<div class="span4 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span4</div>
 		</div>
 
 		<hr>
 
 		<h3>Premise Row Not Responsive</h3>
 		<div class="pwp-row not-responsive">
-			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<div class="span6" style="background: #ccc;">&nbsp;</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span6 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span6</div>
 		</div>
 
 		<hr>
@@ -1074,45 +1018,45 @@ class Premise_Test {
 		<h3>Premise Row Force Columns</h3>
 		<p>also works with class <code>float-right</code></p>
 		<div class="pwp-row force-columns">
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
 
 			Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
 
 			Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
 
 		<h3>Premise Row Without Forcing Columns</h3>
 		<div class="pwp-row">
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
 
 			Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
 
 			Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
 
 		<hr>
 
 		<h3>Premise Inline</h3>
 		<div class="pwp-inline">
-			<div class="span4" style="background: #ccc;">&nbsp;</div>
-			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<div class="span5" style="background: #ccc;">&nbsp;</div>
+			<div class="span4 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span4</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
 		</div>
 
 		<hr>
@@ -1121,59 +1065,59 @@ class Premise_Test {
 		<p>If you want to add a row that does not wrap its content but rather,
 			lets you sroll left and right to see the entore row use the class pwp-scroller.</p>
 		<div class="pwp-scroller">
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
 		</div>
 
 		<hr>
 
 		<h1>Width of actual classes without 'pwp-row' or pwp-inline wrappers</h1>
 
-		<h3>span 1</3>
-		<div class="span1" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span2" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span3" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span4" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span5" style="background: #ccc;">&nbsp;</div>
-		<h3>span6</h3>
-		<div class="span6" style="background: #ccc;">&nbsp;</div>
-		<h3>span7</h3>
-		<div class="span7" style="background: #ccc;">&nbsp;</div>
-		<h3>span8</h3>
-		<div class="span8" style="background: #ccc;">&nbsp;</div>
-		<h3>span9</h3>
-		<div class="span9" style="background: #ccc;">&nbsp;</div>
-		<h3>span10</h3>
-		<div class="span10" style="background: #ccc;">&nbsp;</div>
-		<h3>span11</h3>
-		<div class="span11" style="background: #ccc;">&nbsp;</div>
-		<h3>span12</h3>
-		<div class="span12" style="background: #ccc;">&nbsp;</div>
+		<h3>span 1</h3>
+		<div class="span1" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 2</h3>
+		<div class="span2" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 3</h3>
+		<div class="span3" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 4</h3>
+		<div class="span4" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 5</h3>
+		<div class="span5" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 6</h3>
+		<div class="span6" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 7</h3>
+		<div class="span7" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 8</h3>
+		<div class="span8" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 9</h3>
+		<div class="span9" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 10</h3>
+		<div class="span10" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 11</h3>
+		<div class="span11" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 12</h3>
+		<div class="span12" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
 
 		<hr>
 
-		<h3>col2</h3>
-		<div class="col2" style="background: #ccc;">&nbsp;</div>
-		<h3>col3</h3>
-		<div class="col3" style="background: #ccc;">&nbsp;</div>
-		<h3>col4</h3>
-		<div class="col4" style="background: #ccc;">&nbsp;</div>
-		<h3>col5</h3>
-		<div class="col5" style="background: #ccc;">&nbsp;</div>
-		<h3>col6</h3>
-		<div class="col6" style="background: #ccc;">&nbsp;</div><?php
+		<h3>col 2</h3>
+		<div class="col2" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>col 3</h3>
+		<div class="col3" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>col 4</h3>
+		<div class="col4" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>col 5</h3>
+		<div class="col5" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>col 6</h3>
+		<div class="col6" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div><?php
 	}
 
 	// moved to the bottom for better class readability
