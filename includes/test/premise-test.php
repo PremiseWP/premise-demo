@@ -967,13 +967,39 @@ class Premise_Test {
 	public static function grids() {
 
 		?>
-		<h3>Premise Row</h3>
+		<h2>Premise Row</h2>
+		<p>Using the class <code>pwp-row</code> you can create both Column Grids and Fluid Grids.</p>
+
+		<h3>Column Grid</h3>
+		<p>3 columns</p>
 		<div class="pwp-row">
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
 
+		<p>4 columns</p>
+		<div class="pwp-row">
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+		</div>
+
+		<p>6 columns</p>
+		<div class="pwp-row">
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+		</div>
+
+		<hr>
+
+		<h3>Fluid Grids</h3>
+		<p>With fluid grids you can have columns with different widths.</p>
 		<div class="pwp-row">
 			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
 			<div class="span9 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span9</div>
@@ -985,9 +1011,30 @@ class Premise_Test {
 			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
 		</div>
 
+		<h3>More Control</h3>
+		<p>To have more control over how your grids behave, here are some very helpful classes that you can add to 'pwp-row'.</p>
+
+		<h4>Float Right</h4>
+		<p>Make elements float to the right instead of the left (default) using the class <code>float-right</code>. Helpful when you need the column on the right to stack over the left one when on a mobile device.</p>
+		<div class="pwp-row float-right">
+			<div class="span8 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">This will stack on top when responding down</div>
+			<div class="span4 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span4</div>
+		</div>
+
 		<hr>
 
-		<h3>Premise Row Flush</h3>
+		<h4>Not Responsive</h4>
+		<p>Adding the class <code>not-responsive</code> will force the desktop view of the grid regrdless of the screen size.</p>
+		<div class="pwp-row not-responsive">
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span6 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span6</div>
+		</div>
+
+		<hr>
+
+		<h4>Flush Columns (Applies ONLY to column grids)</h4>
+		<p>The class <code>flush-columns</code> will remove the space between the columns and expand the columns width evenly to fill in the gap. <b>Important:</b> This class does not apply to the fluid grids at the moment.</p>
 		<div class="pwp-row flush-columns not-responsive">
 			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
 			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
@@ -998,25 +1045,10 @@ class Premise_Test {
 			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
 		</div>
 
-		<h3>Premise Row Float Right</h3>
-		<div class="pwp-row float-right">
-			<div class="span8 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">This will stack on top when responding down</div>
-			<div class="span4 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span4</div>
-		</div>
-
 		<hr>
 
-		<h3>Premise Row Not Responsive</h3>
-		<div class="pwp-row not-responsive">
-			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
-			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
-			<div class="span6 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span6</div>
-		</div>
-
-		<hr>
-
-		<h3>Premise Row Force Columns</h3>
-		<p>also works with class <code>float-right</code></p>
+		<h4>Force Columns</h4>
+		<p>Use <code>force-columns</code> to remove floating issues when one element in the grid is taller than the rest. Also works with class <code>float-right</code>.</p>
 		<div class="pwp-row force-columns">
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
@@ -1033,7 +1065,8 @@ class Premise_Test {
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
 
-		<h3>Premise Row Without Forcing Columns</h3>
+		<h4>Without Forcing Columns</h4>
+		<p>Here is an example of how the same grid above would look like without the <code>force-columns</code> class.</p>
 		<div class="pwp-row">
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
@@ -1052,16 +1085,17 @@ class Premise_Test {
 
 		<hr>
 
-		<h3>Premise Inline</h3>
+		<h2>Premise Inline</h2>
+		<p>Using class <code>pwp-inline</code> instead of 'pwp-row' will not float the elements. They elements have the <code>display</code> property set to <code>inline-block</code>. This is useful when you want to align the elements vertically or horizontally.</p>
 		<div class="pwp-inline">
-			<div class="span4 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span4</div>
-			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
-			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
+			<div class="span4 pwp-align-center pwp-vertical-align-middle" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px; box-sizing: border-box;">span4</div>
+			<div class="span3 pwp-align-center pwp-vertical-align-middle" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 30px 2px; box-sizing: border-box;">span3<br>These are vertically aligned in the middle</div>
+			<div class="span5 pwp-align-center pwp-vertical-align-middle" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px; box-sizing: border-box;">span5</div>
 		</div>
 
 		<hr>
 
-		<h3>Premise Scroll</h3>
+		<h2>Premise Scroll</h2>
 		<p>If you want to add a row that does not wrap its content but rather,
 			lets you sroll left and right to see the entore row use the class pwp-scroller.</p>
 		<div class="pwp-scroller">
