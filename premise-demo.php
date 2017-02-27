@@ -96,6 +96,11 @@ class Premise_Demo {
 	 * if the Premise_Options class is available.
 	 */
 	public function new_page() {
+
+		if ( ! class_exists( 'Premise_WP' ) ) {
+			return;
+		}
+
 		$demo_options = array(
 			'title'      => 'Premise Demo Page',
 			'menu_title' => 'Premise Demo',
