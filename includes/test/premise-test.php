@@ -27,9 +27,6 @@ class Premise_Test {
 	 */
 	protected static $instance = null;
 
-
-
-
 	/**
 	 * Access this plugin’s working instance
 	 *
@@ -41,14 +38,41 @@ class Premise_Test {
 		return self::$instance;
 	}
 
-
-
-
 	/**
 	 * Intentionally left empty
 	 */
 	function __construct() {}
 
+	/**
+	 * get all possible fields
+	 *
+	 * @return array fields
+	 */
+	public static function get_fields() {
+		return pwp_form( self::$html_fields, false );
+	}
+
+	/**
+	 * get all possible grids
+	 *
+	 * @return string girds
+	 */
+	public static function get_grids() {
+		ob_start();
+		self::grids();
+		return ob_get_clean();
+	}
+
+	/**
+	 * get maps
+	 *
+	 * @return string maps
+	 */
+	public static function get_maps() {
+		ob_start();
+		self::google_map();
+		return ob_get_clean();
+	}
 
 	/**
 	 * Fields tests
@@ -191,7 +215,7 @@ class Premise_Test {
 			array(
 				'name' => 'input10',
 				'label' => 'Required text input',
-				'required' => 'required',
+				'required' => true,
 			)
 		);
 		echo PHP_EOL;
@@ -241,7 +265,7 @@ class Premise_Test {
 			array(
 				'name' => 'input15',
 				'label' => 'Text input with custom attribute (onclick)',
-				'attribute' => 'onclick="alert(\'Dont you click me!\');"',
+				'attribute' => 'onclick="alert(\'Dont you click me!\');" onload="suck my dick"',
 			)
 		);
 		echo PHP_EOL;
@@ -279,6 +303,8 @@ class Premise_Test {
 			array(
 				'name' => 'input19',
 				'label' => 'WP Media upload button',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 
@@ -596,6 +622,8 @@ class Premise_Test {
 				'name' => 'input3',
 				'label' => 'WP Media input',
 				'wrapper_class' => 'col2',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 
@@ -665,6 +693,8 @@ class Premise_Test {
 				'name' => '3',
 				'label' => 'WP Media input',
 				'wrapper_class' => 'col2',
+				'multiple' => true,
+				'preview' => true,
 			)
 		);
 		premise_field(
@@ -929,146 +959,186 @@ class Premise_Test {
 
 	}
 
-
-
+	/**
+	 * Print all possible grids
+	 *
+	 * @return string grids
+	 */
 	public static function grids() {
-		?><h3>Premise Row</h3>
+
+		?>
+		<h2>Premise Row</h2>
+		<p>Using the class <code>pwp-row</code> you can create both Column Grids and Fluid Grids.</p>
+
+		<h3>Column Grid</h3>
+		<p>3 columns</p>
 		<div class="pwp-row">
-			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
-			<div class="span3 pwp-align-center" style="background: #ccc;">span3</div>
-			<div class="span6 pwp-align-center" style="background: #ccc;">span6</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+		</div>
 
-			<div class="span2 pwp-align-center" style="background: #ccc;">span2</div>
-			<div class="span9 pwp-align-center" style="background: #ccc;">span9</div>
-			<div class="span1 pwp-align-center" style="background: #ccc;">span1</div>
+		<p>4 columns</p>
+		<div class="pwp-row">
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+			<div class="col4 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col4</div>
+		</div>
+
+		<p>6 columns</p>
+		<div class="pwp-row">
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="margin-bottom: 2%; background: #ccc; padding: 20px;">col6</div>
 		</div>
 
 		<hr>
 
-		<h3>Premise Row Flushed Columns</h3>
-		<p>By default pwp-row adds a margin to our columns. To avoid this and create columns that
-			are flushed against each other simply add the class flush-columns to the pwp-row element.
-			Here is an example that will create 4 columns with no margin between them.</p>
-		<div class="pwp-row flush-columns">
-			<div class="col4" style="background: #ccc;">Some content..</div>
-			<div class="col4" style="background: #ccc;">Some content..</div>
-			<div class="col4" style="background: #ccc;">Some content..</div>
-			<div class="col4" style="background: #ccc;">Some content..</div>
+		<h3>Fluid Grids</h3>
+		<p>With fluid grids you can have columns with different widths.</p>
+		<div class="pwp-row">
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span9 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span9</div>
+			<div class="span8 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span8</div>
+			<div class="span2 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span2</div>
+			<div class="span2 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span2</div>
+			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
+			<div class="span2 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span2</div>
+			<div class="span5 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span5</div>
 		</div>
 
-		<hr>
+		<h3>More Control</h3>
+		<p>To have more control over how your grids behave, here are some very helpful classes that you can add to 'pwp-row'.</p>
 
-		<h3>Premise Row Float Right</h3>
+		<h4>Float Right</h4>
+		<p>Make elements float to the right instead of the left (default) using the class <code>float-right</code>. Helpful when you need the column on the right to stack over the left one when on a mobile device.</p>
 		<div class="pwp-row float-right">
-			<div class="span8 pwp-align-center" style="background: #ccc;">This will stack on top when responding down</div>
-			<div class="span4" style="background: #ccc;">
-				<div class="pwp-aspect-ratio-4-3">
-					<div class="pwp-align-center" style="background: #ccc;">span4</div>
-				</div>
-			</div>
+			<div class="span8 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">This will stack on top when responding down</div>
+			<div class="span4 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span4</div>
 		</div>
 
 		<hr>
 
-		<h3>Premise Row Not Responsive</h3>
+		<h4>Not Responsive</h4>
+		<p>Adding the class <code>not-responsive</code> will force the desktop view of the grid regrdless of the screen size.</p>
 		<div class="pwp-row not-responsive">
-			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<div class="span6" style="background: #ccc;">&nbsp;</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span6 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span6</div>
 		</div>
 
 		<hr>
 
-		<h3>Premise Row Force Columns</h3>
-		<p>also works with class <code>float-right</code></p>
+		<h4>Flush Columns (Applies ONLY to column grids)</h4>
+		<p>The class <code>flush-columns</code> will remove the space between the columns and expand the columns width evenly to fill in the gap. <b>Important:</b> This class does not apply to the fluid grids at the moment.</p>
+		<div class="pwp-row flush-columns not-responsive">
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+			<div class="col6 pwp-align-center" style="background: #ccc;border: 1px solid #888; padding: 20px;">col6</div>
+		</div>
+
+		<hr>
+
+		<h4>Force Columns</h4>
+		<p>Use <code>force-columns</code> to remove floating issues when one element in the grid is taller than the rest. Also works with class <code>float-right</code>.</p>
 		<div class="pwp-row force-columns">
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
 
-Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
+			Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
 
-Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
 
-		<h3>Premise Row Without Forcing Columns</h3>
+		<h4>Without Forcing Columns</h4>
+		<p>Here is an example of how the same grid above would look like without the <code>force-columns</code> class.</p>
 		<div class="pwp-row">
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">I don't understand the question, and I won't respond to it. As you may or may not know, Lindsay and I have hit a bit of a rough patch. Well, what do you expect, mother? Did you enjoy your meal, Mom? You drank it fast enough.
 
-Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
+			Oh, you're gonna be in a coma, all right. Army had half a day. Guy's a pro. We just call it a sausage. I've opened a door here that I regret. Whoa, this guy's straight?</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Did you enjoy your meal, Mom? You drank it fast enough. That's why you always leave a note! I hear the jury's still out on science. I don't understand the question, and I won't respond to it.</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">Well, what do you expect, mother? But I bought a yearbook ad from you, doesn't that mean anything anymore? Not tricks, Michael, illusions. We just call it a sausage. That's why you always leave a note!
 
-Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
-			<div class="col3" style="background: #ccc;margin-bottom: 20px;">col3</div>
+			Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I don't criticize you! And if you're worried about criticism, sometimes a diet is the best defense. That's why you always leave a note!</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
+			<div class="col3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">col3</div>
 		</div>
 
 		<hr>
 
-		<h3>Premise Inline</h3>
+		<h2>Premise Inline</h2>
+		<p>Using class <code>pwp-inline</code> instead of 'pwp-row' will not float the elements. They elements have the <code>display</code> property set to <code>inline-block</code>. This is useful when you want to align the elements vertically or horizontally.</p>
 		<div class="pwp-inline">
-			<div class="span4" style="background: #ccc;">&nbsp;</div>
-			<div class="span3" style="background: #ccc;">&nbsp;</div>
-			<div class="span5" style="background: #ccc;">&nbsp;</div>
+			<div class="span4 pwp-align-center pwp-vertical-align-middle" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px; box-sizing: border-box;">span4</div>
+			<div class="span3 pwp-align-center pwp-vertical-align-middle" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 30px 2px; box-sizing: border-box;">span3<br>These are vertically aligned in the middle</div>
+			<div class="span5 pwp-align-center pwp-vertical-align-middle" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px; box-sizing: border-box;">span5</div>
 		</div>
 
 		<hr>
 
-		<h3>Premise Scroll</h3>
+		<h2>Premise Scroll</h2>
 		<p>If you want to add a row that does not wrap its content but rather,
 			lets you sroll left and right to see the entore row use the class pwp-scroller.</p>
 		<div class="pwp-scroller">
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
-			<div class="span3" style="background: #ccc;">Some content..</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
+			<div class="span3 pwp-align-center" style="margin-bottom: 2%; margin-bottom: 2%; background: #ccc; padding: 20px;">span3</div>
 		</div>
 
 		<hr>
 
 		<h1>Width of actual classes without 'pwp-row' or pwp-inline wrappers</h1>
 
-		<h3>span 1</3>
-		<div class="span1" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span2" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span3" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span4" style="background: #ccc;">&nbsp;</div>
-		<h3>span</h3>
-		<div class="span5" style="background: #ccc;">&nbsp;</div>
-		<h3>span6</h3>
-		<div class="span6" style="background: #ccc;">&nbsp;</div>
-		<h3>span7</h3>
-		<div class="span7" style="background: #ccc;">&nbsp;</div>
-		<h3>span8</h3>
-		<div class="span8" style="background: #ccc;">&nbsp;</div>
-		<h3>span9</h3>
-		<div class="span9" style="background: #ccc;">&nbsp;</div>
-		<h3>span10</h3>
-		<div class="span10" style="background: #ccc;">&nbsp;</div>
-		<h3>span11</h3>
-		<div class="span11" style="background: #ccc;">&nbsp;</div>
-		<h3>span12</h3>
-		<div class="span12" style="background: #ccc;">&nbsp;</div>
+		<h3>span 1</h3>
+		<div class="span1" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 2</h3>
+		<div class="span2" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 3</h3>
+		<div class="span3" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 4</h3>
+		<div class="span4" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 5</h3>
+		<div class="span5" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 6</h3>
+		<div class="span6" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 7</h3>
+		<div class="span7" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 8</h3>
+		<div class="span8" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 9</h3>
+		<div class="span9" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 10</h3>
+		<div class="span10" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 11</h3>
+		<div class="span11" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
+		<h3>span 12</h3>
+		<div class="span12" style="border-top: 10px solid #fff; border-bottom: 10px solid #fff; margin-bottom: 2%; background: #ccc; height: 1px; border-right: 1px solid #444; border-left: 1px solid #444;">&nbsp;</div>
 
 		<hr>
 
@@ -1087,4 +1157,176 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 		$f = new PWP_Field_Controller( array( 'options' => array( '0' => '1', 'value2' => '2', 'value3' => '3' ), 'type' => 'select' ) );
 		echo $f->html;
 	}
+
+	// moved to the bottom for better class readability
+	/**
+	 * holds all different types of html_fields
+	 *
+	 * @var array
+	 */
+	private static $html_fields = array(
+		array(
+			'type' => 'wp_media',
+			'name' => '[wp_media]',
+			'label' => 'wp_media',
+			'class' => 'wp_media',
+		),
+		array(
+			'type' => 'fa_icon',
+			'name' => '[fa_icon]',
+			'label' => 'fa_icon',
+			'class' => 'fa_icon',
+		),
+		array(
+			'type' => 'video',
+			'name' => '[video]',
+			'label' => 'video',
+			'class' => 'video',
+		),
+		array(
+			'type' => 'wp_color',
+			'name' => '[wp_color]',
+			'label' => 'wp_color',
+			'class' => 'wp_color',
+		),
+		array(
+			'type' => 'text',
+			'name' => '[text]',
+			'label' => 'text',
+			'class' => 'text-field',
+		),
+		array(
+			'type' => 'textarea',
+			'name' => '[textarea]',
+			'label' => 'textarea',
+			'class' => 'textarea-field',
+		),
+		array(
+			'type' => 'select',
+			'name' => '[select]',
+			'label' => 'select',
+			'options' => array(
+				'Select an option' => '',
+				'option 1' => 'option1',
+				'option 2' => 'option2',
+				'option 3' => 'option3',
+			),
+			'class' => 'select-field',
+		),
+		array(
+			'type' => 'radio',
+			'name' => '[radio]',
+			'label' => 'radio',
+			'class' => 'radio-field',
+		),
+		array(
+			'type' => 'checkbox',
+			'name' => '[checkbox]',
+			'label' => 'checkbox',
+			'class' => 'checkbox-field',
+		),
+		array(
+			'type' => 'button',
+			'name' => '[button]',
+			// 'label' => 'button', // no label needed for buttons
+			'class' => 'button-field',
+			'value' => 'Button',
+		),
+		array(
+			'type' => 'reset',
+			'name' => '[reset]',
+			// 'label' => 'reset', // no label needed for buttons
+			'class' => 'reset-field',
+		),
+		array(
+			'type' => 'submit',
+			'name' => '[submit]',
+			// 'label' => 'submit', // no label needed for buttons
+			'class' => 'reset-field',
+		),
+		array(
+			'type' => 'color',
+			'name' => '[color]',
+			'label' => 'color',
+			'class' => 'color-field',
+		),
+		array(
+			'type' => 'number',
+			'name' => '[number]',
+			'label' => 'number',
+			'class' => 'number-field',
+		),
+		array(
+			'type' => 'date',
+			'name' => '[date]',
+			'label' => 'date',
+			'class' => 'date-field',
+		),
+		array(
+			'type' => 'datetime',
+			'name' => '[datetime]',
+			'label' => 'datetime',
+			'class' => 'datetime-field',
+		),
+		array(
+			'type' => 'datetime-local',
+			'name' => '[datetime-local]',
+			'label' => 'datetime-local',
+			'class' => 'datetime-field',
+		),
+		array(
+			'type' => 'email',
+			'name' => '[email]',
+			'label' => 'email',
+			'class' => 'email-field',
+		),
+		array(
+			'type' => 'month',
+			'name' => '[month]',
+			'label' => 'month',
+			'class' => 'month-field',
+		),
+		array(
+			'type' => 'range',
+			'name' => '[range]',
+			'label' => 'range',
+			'class' => 'range-field',
+		),
+		array(
+			'type' => 'search',
+			'name' => '[search]',
+			'label' => 'search',
+			'class' => 'search-field',
+		),
+		array(
+			'type' => 'tel',
+			'name' => '[tel]',
+			'label' => 'tel',
+			'class' => 'tel-field',
+		),
+		array(
+			'type' => 'time',
+			'name' => '[time]',
+			'label' => 'time',
+			'class' => 'time-field',
+		),
+		array(
+			'type' => 'url',
+			'name' => '[url]',
+			'label' => 'url',
+			'class' => 'url-field',
+		),
+		array(
+			'type' => 'week',
+			'name' => '[week]',
+			'label' => 'week',
+			'class' => 'week-field',
+		),
+		array(
+			'tag' => 'div',
+			'id' => 'div_id',
+			'class' => 'div_class',
+			'value' => 'This div says fuck you!',
+		),
+	);
 }
