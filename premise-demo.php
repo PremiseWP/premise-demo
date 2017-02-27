@@ -28,7 +28,8 @@ include 'includes/require-premise-wp.php';
 /**
  * Start our plugin
  */
-add_action( 'plugins_loaded', array( Premise_Demo::get_instance(), 'init' ) );
+if ( class_exists( 'Premise_WP' ) )
+	add_action( 'plugins_loaded', array( Premise_Demo::get_instance(), 'init' ) );
 
 /**
  * The plugin's main class
