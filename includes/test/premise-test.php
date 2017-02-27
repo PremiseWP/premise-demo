@@ -1082,5 +1082,9 @@ Michael! It's called 'taking advantage. ' It's what gets you ahead in life. I do
 		<div class="col5" style="background: #ccc;">&nbsp;</div>
 		<h3>col6</h3>
 		<div class="col6" style="background: #ccc;">&nbsp;</div><?php
+
+		// Test PWP_Field.
+		$f = new PWP_Field_Controller( array( 'options' => array( '0' => '1', 'value2' => '2', 'value3' => '3' ), 'type' => 'select' ) );
+		echo $f->html;
 	}
 }
