@@ -3,7 +3,7 @@
  * Plugin Name: Premise Demo
  * Plugin URI:  http://premise.dev
  * Description: Use this plugin as a start for your new project or simply an easy way to try out Premise WP
- * Version:     1.0.0
+ * Version:     1.1.0
  * Author:      Mario Vallejo
  * Author URI:  http://premisewp.com
  * License:     GPL2
@@ -15,15 +15,10 @@
 // Block direct access to this file.
 defined( 'ABSPATH' ) or die();
 
-
-
 /**
  * Require Premise WP
  */
 include 'includes/require-premise-wp.php';
-
-
-
 
 /**
  * Start our plugin
@@ -49,16 +44,12 @@ class Premise_Demo {
 	 */
 	protected static $instance = null;
 
-
 	/**
 	 * option name to use to retrieve data from db when using demo plugin
 	 *
 	 * @var string
 	 */
 	protected $opt_name = 'pwp_demo';
-
-
-
 
 	/**
 	 * Access this plugin’s working instance
@@ -71,9 +62,6 @@ class Premise_Demo {
 		return self::$instance;
 	}
 
-
-
-
 	/**
 	 * require classes
 	 */
@@ -81,9 +69,6 @@ class Premise_Demo {
 			require 'includes/test/premise-test.php';
 			require 'includes/test/class.form-test.php';
 	}
-
-
-
 
 	/**
 	 * Hook our page to be created on init
@@ -113,44 +98,6 @@ class Premise_Demo {
 		);
 
 		new PWP_Admin_Page( $demo_options, '', $this->opt_name );
-
-/**
- * First we create the fields that we want to add to our page
- *
- * @var array
- */
-$theme_options = array(
-	'action'      => 'options.php',
-	'name_prefix' => 'our_options_name', // notice that by placing the 'name' attribute here we avoid having to do it for each field
-	array(
-		'type' => 'wp_media',
-		'name' => '[theme-logo]',
-		'label' => 'Logo',
-		'preview' => true,
-	),
-	array(
-		'type' => 'select',
-		'name' => '[theme-layout]',
-		'label' => 'Layout',
-		'options' => array(
-			'Boxed' => 'boxed',
-			'Full Width' => 'full-width',
-		),
-	),
-	array(
-		'type' => 'textarea',
-		'name' => '[theme-copyright]',
-		'label' => 'Copyright',
-	),
-	array( 'type' => 'submit' ),
-);
-
-/**
- * Title: Theme Options
- * Fields: $theme_options
- * Option Names: same as name attribute for fields
- */
-// new PWP_Admin_Page( 'Theme Options', $theme_options, $theme_options['name_prefix'] );
 	}
 
 	/**
@@ -176,7 +123,7 @@ $theme_options = array(
 			// Premise_test::videos_embed();
 			// Premise_test::fields_duplicate();
 			// Premise_test::google_map();
-			Premise_test::grids();
+			// Premise_test::grids();
 
 		echo '</div>';
 	}
