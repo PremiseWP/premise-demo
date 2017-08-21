@@ -911,50 +911,66 @@ class Premise_Test {
 	public static function google_map() {
 
 		?>
-		<h2>Premise WP framework</h2>
-		<h3>Google maps demo</h3><br />
-		<div class="pwp-row">
-			<h4>Google Map, default height</h4>
-			<div class="premise-google-map"></div>
-
-			<h4>Google Map without Marker, 500px height</h4>
-			<div class="premise-google-map"></div>
-
-			<h4>Google Map, 16/9 ratio, zoom 5</h4>
-			<div class="premise-aspect-ratio-16-9">
-				<div class="premise-google-map"></div>
-			</div>
-		</div>
-		<script>
-			// Declare it globally as a default
-			jQuery.fn.premiseGoogleMap.defaults.key = 'AIzaSyBT4NE75feyuFYEhik3JbyAKl0mYwkEt3o';
-
-			var map = jQuery('.premise-google-map').premiseGoogleMap({
-				center: '1 avenue des Champs Elysées, Paris, France',
-				infowindow: {
-					content: 'This is what up!',
-				}
-			});
-
-			console.log( map );
-
-			// Change the default 300px to 500px.
-			// jQuery.fn.premiseGoogleMap.defaults.minHeight = 500;
-
-			// jQuery('.premise-google-map').premiseGoogleMap({
-			// 	center: 'Miami, FL',
-			// 	marker: false
-			// });
-
-			// // Get rid of the min height param. we wont need it.
-			// jQuery.fn.premiseGoogleMap.defaults.minHeight = 100;
-
-			// jQuery('.premise-google-map').premiseGoogleMap({
-			// 	center: 'Chicago IL',
-			// 	zoom: 5
-			// });
-
+		<script>// Declare it globally as a default
+			jQuery.fn.roamiGmap.defaults.key = 'AIzaSyBT4NE75feyuFYEhik3JbyAKl0mYwkEt3o';
 		</script>
+
+		<h3>Google maps demo</h3>
+		<p>Below are a few examples of the options that can be passed to Google maps plugin roamiGmap. For a complete list of options visit <a href="https://github.com/mvallejo3/roamiGmap" target="_blank">the plugin's GitHub page</a>.</p>
+
+		<h4>Default height</h4>
+		<p><pre>
+$('.el_selector').roamiGmap({
+  center: 'Chicago, IL',
+  infowindow: {
+    content: 'This is Chicago!',
+  }
+});</pre></p>
+
+		<div class="premise-google-map-default"></div>
+		<script>var map = jQuery('.premise-google-map-default').roamiGmap({
+			center: 'Chicago, IL',
+			infowindow: {
+				content: 'This is Chicago!',
+			}
+		});</script>
+
+		<br><hr><br>
+
+		<h4>No marker and 500px height</h4>
+		<p><pre>
+$('.el_selector').roamiGmap({
+  center: 'Miami, FL',
+  marker: false,
+  minHeight: 500,
+});</pre></p>
+		<div class="premise-google-map-no-marker"></div>
+		<script>var map = jQuery('.premise-google-map-no-marker').roamiGmap({
+			center: 'Miami, FL',
+			marker: false,
+			minHeight: 500,
+		});</script>
+
+		<br><hr><br>
+
+		<h4>Zoom 5 and size based on aspect ratio (16:9)</h4>
+		<p><pre>
+&lt;!-- The HTML --&gt;
+&lt;div class="pwp-aspect-ratio-16-9"&gt;
+  &lt;div class="map_class"&gt;&lt;/div&gt;
+&lt;/div&gt;
+// The JS
+$('.map_class').roamiGmap({
+  center: 'Boston, MA',
+  zoom: 5,
+});</pre></p>
+		<div class="pwp-aspect-ratio-16-9">
+			<div class="premise-google-map-ar"></div>
+		</div>
+		<script>var map = jQuery('.premise-google-map-ar').roamiGmap({
+			center: 'Boston, MA',
+			zoom: 5,
+		});</script>
 		<?php
 
 	}
